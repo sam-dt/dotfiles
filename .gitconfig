@@ -1,0 +1,25 @@
+[user]
+	name = Sam Dhondt
+	email = sam@codifly.be
+[core]
+	excludesfile = /Users/sam/.gitignore_global
+	ignorecase = false
+	editor = nvim
+[commit]
+	template = /Users/sam/.stCommitMsg
+[mergetool "nvim"]
+  cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+[diff]
+	tool = vimdiff
+[merge]
+	tool = nvim
+[difftool]
+	prompt = false
+[mergetool]
+	path = nvim
+	keepBackup = false
