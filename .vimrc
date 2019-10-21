@@ -125,6 +125,9 @@ nnoremap H :vertical resize -5<CR>
 nnoremap J :resize +5<CR>
 nnoremap K :resize -5<CR>
 
+" remap join lines
+nnoremap <C-n> J
+
 " window split shortcuts
 nnoremap <Leader>sv <C-w>v<C-w>l
 nnoremap <Leader>sh <C-w>s<C-w>j

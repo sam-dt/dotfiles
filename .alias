@@ -1,0 +1,29 @@
+# === Git alias === #
+alias gaac='git add . && git commit -m'
+alias gdn='git diff --name-only'
+alias gslg='git shortlog'
+alias glgo='git log --oneline'
+alias glgos='git log --oneline -5 |cat'
+alias glnf='git pull --no-ff'
+alias gdd='git diff development.."$(git_current_branch)"'
+alias gdm='git diff master.."$(git_current_branch)"'
+
+# === Docker alias === #
+alias du='docker start'
+alias dd='docker stop'
+alias dr='docker restart'
+alias dlg='docker logs --follow'
+alias drm='docker rm'
+alias drmi='docker rmi'
+alias dps='docker ps'
+
+# === Scripts alias === #
+alias pbastart='~/scripts/startupPBA.sh'
+alias pbalogin='~/scripts/loginPBA.sh'
+alias pbactx='~/scripts/startContextPBA.sh'
+
+# === Application alias === #
+alias chrome='open -a /Applications/Google\ Chrome.app'
+
+# === Other alias === #
+alias rmorig='find . -type f -name "*.orig" -delete' # remove orig files after git merge

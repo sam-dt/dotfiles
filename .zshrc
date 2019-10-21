@@ -102,62 +102,17 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-# === Git alias === #
-alias gaac='git add . && git commit -m'
-alias gdn='git diff --name-only'
-alias gslg='git shortlog'
-alias glgo='git log --oneline'
-alias glgos='git log --oneline -5 |cat'
-alias glnf='git pull --no-ff'
-alias gdd='git diff development.."$(git_current_branch)"'
-alias gdm='git diff master.."$(git_current_branch)"'
+source ./.alias
 
-# === Docker alias === #
-alias du='docker start'
-alias dd='docker stop'
-alias dr='docker restart'
-alias dlg='docker logs --follow'
-alias drm='docker rm'
-alias drmi='docker rmi'
-alias dps='docker ps'
+# Load functions
+source ./.function
 
-# === Scripts alias === #
-alias pbastart='~/scripts/startupPBA.sh'
-alias pbalogin='~/scripts/loginPBA.sh'
-alias pbactx='~/scripts/startContextPBA.sh'
-
-# === Application alias === #
-alias chrome='open -a /Applications/Google\ Chrome.app'
-
-# === Other alias === #
-alias rmorig='find . -type f -name "*.orig" -delete' # remove orig files after git merge
-
-# === Git functions === #
-## Git add files by grepping from diff 
-gafd () {
-  git add `gdn |grep $1`
-}
-
-## Git add files by grepping from status
-gafs () {
-  git add `gss |grep $1 |cut -c4-`
-}
-
-## Git reset single file to index
-grf () {
-  gco `gdn |grep $1`
-}
 
 # Load Git completion
 zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
 fpath=(~/.zsh $fpath)
 
 autoload -Uz compinit && compinit
-
-# === Other functions === #
-chromeloc () { 
-	open -a /Applications/Google\ Chrome.app "http://localhost:$1"
-}
 
 # === nvm setup === #
 export NVM_DIR="$HOME/.nvm"
