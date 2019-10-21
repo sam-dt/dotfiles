@@ -1,20 +1,30 @@
 # === Git functions === #
-## Git add files by grepping from diff 
+## Git add files by rgping from diff 
 gafd () {
-  git add `gdn |grep $1`
+  git add `gdn |rg $1`
 }
 
-## Git add files by grepping from status
+## Git add files by rgping from status
 gafs () {
-  git add `gss |grep $1 |cut -c4-`
+  git add `gss |rg $1 |cut -c4-`
 }
 
 ## Git reset single file to index
 grf () {
-  gco `gdn |grep $1`
+  gco `gdn |rg $1`
 }
 
 # === Other functions === #
 chromeloc () { 
 	open -a /Applications/Google\ Chrome.app "http://localhost:$1"
+}
+
+# Create a new directory and enter it
+function mkd() {
+  mkdir -p "$@" && cd "$@"
+}
+
+# Open man page as PDF
+function manpdf() {
+ man -t "${1}" | open -f -a /Applications/Preview.app/
 }
