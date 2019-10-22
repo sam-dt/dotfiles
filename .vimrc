@@ -240,6 +240,9 @@ call plug#begin()
 	" Vim fugitive
 	Plug 'tpope/vim-fugitive'
 
+	" Ale for linting bash/sh
+	Plug 'dense-analysis/ale'
+
 call plug#end()
 " }}}
 
@@ -364,3 +367,11 @@ let g:Mm_ShowHidden = 1
 " === Vim Fugitive === {{{
 set diffopt+=vertical
 "}}}
+
+" === Ale === {{{
+let g:ale_linters = {
+\   'sh': ['shellcheck'],
+\}
+
+let g:ale_linters_explicit = 1
+" }}}
