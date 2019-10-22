@@ -1,3 +1,7 @@
+# === General === #
+alias ll='ls -l'
+alias lla='ls -lA'
+
 # === Git === #
 alias gl='git pull'
 alias gco='git checkout'
