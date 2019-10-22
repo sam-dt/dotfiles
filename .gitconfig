@@ -5,8 +5,6 @@
 	excludesfile = /Users/sam/.gitignore_global
 	ignorecase = false
 	editor = nvim
-[commit]
-	template = /Users/sam/.stCommitMsg
 [mergetool "nvim"]
   cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 [alias]
