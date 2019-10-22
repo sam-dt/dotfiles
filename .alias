@@ -54,6 +54,7 @@ alias eali='nvim ~/.dotfiles/.alias && source ~/.alias'
 alias efun='nvim ~/.dotfiles/.function && source ~/.function'
 alias egit='nvim ~/.dotfiles/.gitconfig && source ~/.gitconfig'
 alias etmu='nvim ~/.dotfiles/.tmux.conf'
+alias eenv='nvim ~/.dotfiles/.env && source ~/.env'
 
 # === Other === #
 alias rmorig='find . -type f -name "*.orig" -delete' # remove orig files after git merge
