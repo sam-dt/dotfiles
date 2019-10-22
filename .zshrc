@@ -1,3 +1,6 @@
+# Load env vars
+source "$HOME/.env"
+
 # Load aliases
 source "$HOME/.alias"
 
