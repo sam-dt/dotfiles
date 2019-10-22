@@ -1,6 +1,18 @@
-# === Git alias === #
+# === Git === #
+alias gl='git pull'
+alias gco='git checkout'
+alias gp='git push'
+alias gm='git merge'
+alias gmt='git mergetool --no-prompt'
+alias gss='git status -s'
+alias gc='git commit -v'
+alias gaa='git add .'
+alias gst='git stash push'
+alias gsta='git stash apply'
+alias gpsup'git push --set-origin upstream "$(git_current_branch)"'
 alias gaac='git add . && git commit -m'
 alias gdn='git diff --name-only'
+alias glgg='git log --graph --max-count = 10'
 alias gslg='git shortlog'
 alias glgo='git log --oneline'
 alias glgos='git log --oneline -5 |cat'
@@ -8,7 +20,7 @@ alias glnf='git pull --no-ff'
 alias gdd='git diff development.."$(git_current_branch)"'
 alias gdm='git diff master.."$(git_current_branch)"'
 
-# === Docker alias === #
+# === Docker === #
 alias du='docker start'
 alias dd='docker stop'
 alias dr='docker restart'
@@ -17,13 +29,13 @@ alias drm='docker rm'
 alias drmi='docker rmi'
 alias dps='docker ps'
 
-# === Scripts alias === #
+# === Scripts === #
 alias pbastart='~/scripts/startupPBA.sh'
 alias pbalogin='~/scripts/loginPBA.sh'
 alias pbactx='~/scripts/startContextPBA.sh'
 
-# === Application alias === #
+# === Application === #
 alias chrome='open -a /Applications/Google\ Chrome.app'
 
-# === Other alias === #
+# === Other === #
 alias rmorig='find . -type f -name "*.orig" -delete' # remove orig files after git merge
