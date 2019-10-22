@@ -1,10 +1,8 @@
-# For a full list of active aliases, run `alias`.
-source ./.alias
+# Load aliases
+source "$HOME/.alias"
 
 # Load functions
-source ./.function
-
-autoload -Uz compinit && compinit
+source "$HOME/.function"
 
 # === zplug === #
 source ~/.zplug/init.zsh
