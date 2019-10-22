@@ -360,3 +360,7 @@ let g:Mm_IgnoreDirectoryPatterns = ['bin', '.git', 'node_modules']
 let g:Mm_ShowHidden = 1
 
 "}}}
+
+" === Vim Fugitive === {{{
+set diffopt+=vertical
+"}}}
