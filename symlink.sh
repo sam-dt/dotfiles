@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Run this file from dotfiles directory
+
 FILES_TO_SYMLINK=$(find "$(pwd)" -type f -maxdepth 1 -name ".*")
 
 for file in ${FILES_TO_SYMLINK}; do
