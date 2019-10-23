@@ -47,6 +47,7 @@ alias pbactx='~/scripts/startContextPBA.sh'
 
 # === Application === #
 alias chrome='open -a /Applications/Google\ Chrome.app'
+alias firefox='open -a /Applications/Firefox.app'
 
 # === Edit configurations === #
 alias ezsh='nvim ~/.dotfiles/.zshrc && source ~/.zshrc'
