@@ -88,12 +88,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-" movement shortcuts
-nnoremap j gj
-nnoremap k gk
-nnoremap <S-h> 0
-nnoremap <S-l> $
-
 " delete shortcuts
 nnoremap - ddp
 nnoremap _ ddkP
