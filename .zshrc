@@ -7,6 +7,14 @@ source "$HOME/.alias"
 # Load functions
 source "$HOME/.function"
 
+# History configuration
+HISTSIZE=1000 
+HISTFILE=~/.zsh_history
+SAVEHIST=1000
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory  # Immediately append to the history file, not just when a term is killed
+
 # === zplug === #
 source ~/.zplug/init.zsh
 
