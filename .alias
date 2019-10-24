@@ -57,5 +57,6 @@ alias egit='nvim ~/.dotfiles/.gitconfig && source ~/.gitconfig'
 alias etmu='nvim ~/.dotfiles/.tmux.conf'
 alias eenv='nvim ~/.dotfiles/.env && source ~/.env'
 
-# === Other === #
-alias rmorig='find . -type f -name "*.orig" -delete' # remove orig files after git merge
+# === Projects === #
+# PBA
+alias generateTypes='yarn generate:types --header "Authorization: $(pbalogin >> /dev/null && pbpaste)"'
