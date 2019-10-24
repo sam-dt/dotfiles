@@ -1,17 +1,19 @@
+#!/bin/bash
+
 # === Git functions === #
 ## Git add files by rgping from diff 
 gafd () {
-  git add `gdn |rg $1`
+	git add "$(gdn |rg "$1")"
 }
 
 ## Git add files by rgping from status
 gafs () {
-  git add `gss |rg $1 |cut -c4-`
+	git add "$(gss |rg "$1" |cut -c4-)"
 }
 
 ## Git reset single file to index
 grf () {
-  gco `gdn |rg $1`
+	gco "$(gdn |rg "$1")"
 }
 
 # === Other functions === #
@@ -24,11 +26,12 @@ fireloc() {
 }
 
 # Create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$@"
+mkd () {
+  mkdir -p "$@" && cd "$@" || exit
 }
 
 # Open man page as PDF
-function manpdf() {
+manpdf () {
  man -t "${1}" | open -f -a /Applications/Preview.app/
 }
+
