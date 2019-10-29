@@ -30,15 +30,27 @@ alias gr='git reset'
 alias grh='git reset HEAD'
 alias grhh='git reset HEAD --hard'
 alias gcb='git checkout -b'
+alias gbd='git branch -d'
+alias gbD='git branch -D'
 
 # === Docker === #
 alias du='docker start'
 alias dd='docker stop'
 alias dr='docker restart'
-alias dlg='docker logs --follow'
+alias dlgf='docker logs --follow'
+alias dlg='docker logs'
 alias drm='docker rm'
 alias drmi='docker rmi'
 alias dps='docker ps'
+
+# === Tmux === #
+alias tn='tmux new-session'
+alias tns='tmux new-session -s'
+alias tk='tmux kill-session -t'
+alias tka='tmux kill-session -a'
+alias ta='tmux attach-session'
+alias tas='tmux attach-session -t'
+alias tls='tmux ls'
 
 # === Scripts === #
 alias pbastart='~/scripts/startupPBA.sh'
