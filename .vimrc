@@ -273,6 +273,12 @@ augroup typescript_abbrev
 	autocmd FileType typescript,typescript.tsx :iabbrev impstyled import styled from 'styled-components';
 augroup END
 
+" typscript specific mappings
+augroup typescript_map
+	" add semicolon to end of line
+	autocmd FileType typescript,typescript.tsx :nnoremap <Leader>sc mqA;<Esc>`q
+augroup END
+
 " Autocompletion behavior
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
