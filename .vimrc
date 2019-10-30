@@ -237,6 +237,9 @@ call plug#begin()
 	" Ale for linting bash/sh
 	Plug 'dense-analysis/ale'
 
+	" Easy split navigation with tmux
+	Plug 'christoomey/vim-tmux-navigator'
+
 call plug#end()
 " }}}
 
