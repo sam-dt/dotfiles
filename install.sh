@@ -14,6 +14,7 @@ brew install node
 brew install --HEAD neovim # nightly build, required for coc.nvim
 brew install python3
 brew install rg # better grep variant
+brew install zsh
 brew install zplug
 brew install tmux
 
@@ -40,3 +41,8 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
 # === Vim setup === #
 # install pynvim
 python3 -m pip install --upgrade pynvim
+
+# === Zsh setup === #
+# docker completion
+mkdir -p ~/.zsh/completion && \
+ curl -L https://raw.githubusercontent.com/docker/compose/1.24.1/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
