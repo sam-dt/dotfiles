@@ -1,3 +1,4 @@
+# === General settings === #
 # Load env vars
 source "$HOME/.env"
 
@@ -14,6 +15,10 @@ SAVEHIST=1000
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory  # Immediately append to the history file, not just when a term is killed
+
+# append completion to fpath
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
 
 # === zplug === #
 source ~/.zplug/init.zsh
