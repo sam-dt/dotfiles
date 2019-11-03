@@ -1,19 +1,25 @@
 #!/bin/bash
 
 # === Git functions === #
-## Git add files by rgping from diff 
-gafd () {
-	git add "$(gdn |rg "$1")"
-}
-
-## Git add files by rgping from status
+# Git add files by rgping from status
 gafs () {
-	git add "$(gss |rg "$1" |cut -c4-)"
+	for file in $(git status -s |rg "$1" |cut -c4-); do
+		git add "$file"
+	done
 }
 
-## Git reset single file to index
-grf () {
-	gco "$(gdn |rg "$1")"
+# Git reset files to index by rgping from status
+grfs () {
+	for file in $(git status -s |rg "$1"); do
+		git reset HEAD -- "$file"
+	done
+}
+
+# Git hard reset files
+grfh () {
+	for file in $(git status -s |rg "$1"); do
+		git checkout HEAD -- "$file"
+	done
 }
 
 # === Other functions === #
