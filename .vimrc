@@ -240,6 +240,9 @@ call plug#begin()
 	" Easy split navigation with tmux
 	Plug 'christoomey/vim-tmux-navigator'
 
+	" Line commenter
+	Plug 'scrooloose/nerdcommenter'
+
 call plug#end()
 " }}}
 
