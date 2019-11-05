@@ -10,14 +10,14 @@ gafs () {
 
 # Git reset files to index by rgping from status
 grfs () {
-	for file in $(git status -s |rg "$1"); do
+	for file in $(git status -s |rg "$1" |cut -c4-); do
 		git reset HEAD -- "$file"
 	done
 }
 
 # Git hard reset files
 grfh () {
-	for file in $(git status -s |rg "$1"); do
+	for file in $(git status -s |rg "$1" |cut -c4-); do
 		git checkout HEAD -- "$file"
 	done
 }
