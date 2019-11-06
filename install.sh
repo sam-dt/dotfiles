@@ -3,6 +3,9 @@
 # This script is meant for a new machine to quickly setup and install
 # applications
 
+# install XCode cli tools
+xcode-select —-install
+
 # run symlink script for dotfiles
 ./symlink.sh
 
