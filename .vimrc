@@ -199,7 +199,7 @@ call plug#begin()
 	Plug 'zivyangll/git-blame.vim'
 
 	" Coc for neovim
-  Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   "coc extensions
   let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
@@ -242,6 +242,10 @@ call plug#begin()
 
 	" Line commenter
 	Plug 'scrooloose/nerdcommenter'
+
+	" vim surround
+	Plug	'tpope/vim-surround'
+
 
 call plug#end()
 " }}}
