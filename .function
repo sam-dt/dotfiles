@@ -22,6 +22,11 @@ grfh () {
 	done
 }
 
+# === Docker functions === #
+dt () {
+	docker exec -it "$1" /bin/sh
+}
+
 # === Other functions === #
 chromeloc () { 
 	open -a /Applications/Google\ Chrome.app "http://localhost:$1"
