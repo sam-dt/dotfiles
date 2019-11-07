@@ -8,6 +8,12 @@ source "$HOME/.alias"
 # Load functions
 source "$HOME/.function"
 
+# Set edit command lines keys
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
 # History configuration
 HISTSIZE=1000 
 HISTFILE=~/.zsh_history
