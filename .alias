@@ -1,11 +1,13 @@
 # === General === #
 alias ll='ls -l'
 alias lla='ls -lA'
+alias uuidgen_lower="uuidgen |tr '[:upper:]' '[:lower:]'"
 
 # === Git === #
 alias gl='git pull'
 alias gco='git checkout'
 alias gp='git push'
+alias gpF='git push --force'
 alias gm='git merge'
 alias gmt='git mergetool --no-prompt'
 alias gss='git status -s'
@@ -19,7 +21,8 @@ alias gstl='git stash list'
 alias gpsup='git push --set-upstream origin "$(git_current_branch)"'
 alias gaac='git add . && git commit -m'
 alias gdn='git diff --name-only'
-alias glgg='git log --graph'
+alias glg='git log --graph'
+alias glgp='git log --graph -p'
 alias gslg='git shortlog'
 alias glgo='git log --oneline'
 alias glgos='git log --oneline -5 |cat'
@@ -36,6 +39,8 @@ alias gb='git branch'
 alias gba='git branch -a'
 alias gbd='git branch -d'
 alias gbD='git branch -D'
+alias grb='git rebase -i'
+alias grbc='git rebase --continue'
 
 # === Docker === #
 alias du='docker start'
@@ -46,6 +51,7 @@ alias dlg='docker logs'
 alias drm='docker rm'
 alias drmi='docker rmi'
 alias dps='docker ps'
+alias db='docker build'
 
 # === Tmux === #
 alias tn='tmux new-session'
@@ -75,4 +81,4 @@ alias eenv='nvim ~/.dotfiles/.env && source ~/.env'
 
 # === Projects === #
 # PBA
-alias generateTypes='yarn generate:types --header "Authorization: $(pbalogin >> /dev/null && pbpaste)"'
+alias generateTypes='yarn generate:types --header "Authorization: Bearer $(pbalogin)"'
