@@ -39,5 +39,6 @@ zplug 'agkozak/zsh-z'
 
 # autosuggestions
 zplug 'zsh-users/zsh-autosuggestions'
+bindkey '^ ' autosuggest-accept
 
 zplug load

@@ -63,11 +63,6 @@ alias ta='tmux attach-session'
 alias tas='tmux attach-session -t'
 alias tls='tmux ls'
 
-# === Scripts === #
-alias pbastart='~/scripts/startupPBA.sh'
-alias pbalogin='~/scripts/loginPBA.sh'
-alias pbactx='~/scripts/startContextPBA.sh'
-
 # === Application === #
 alias chrome='open -a /Applications/Google\ Chrome.app'
 alias firefox='open -a /Applications/Firefox.app'
@@ -80,6 +75,3 @@ alias egit='nvim ~/.dotfiles/.gitconfig && source ~/.gitconfig'
 alias etmu='nvim ~/.dotfiles/.tmux.conf && tmux source-file ~/.tmux.conf'
 alias eenv='nvim ~/.dotfiles/.env && source ~/.env'
 
-# === Projects === #
-# PBA
-alias generateTypes='yarn generate:types --header "Authorization: Bearer $(pbalogin)"'
