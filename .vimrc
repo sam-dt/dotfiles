@@ -111,12 +111,6 @@ nnoremap <Leader>( viw<esc>a)<esc>bi(<esc>lel
 nnoremap <Leader>[ viw<esc>a]<esc>bi[<esc>lel
 nnoremap <Leader>{ viw<esc>a}<esc>bi{<esc>lel
 
-" write and quit shortcuts
-inoremap :w <esc>:w
-inoremap :wq <esc>:wq
-inoremap :q <esc>:q
-inoremap :q! <esc>:q!
-
 " window resize shortcuts
 nnoremap L :vertical resize +5<CR>
 nnoremap H :vertical resize -5<CR>
