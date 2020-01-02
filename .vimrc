@@ -331,7 +331,7 @@ autocmd FileType typescript.tsx JsPreTmpl
 "}}}
 
 " === Git Blame === {{{
-nnoremap <Leader>gb :<C-u>call gitblame#echo()<CR>
+nnoremap <C-g> :<C-u>call gitblame#echo()<CR>
 " }}}
 
 " === Angular CLI support === {{{
