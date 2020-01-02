@@ -42,6 +42,7 @@ alias gbdm='git branch --merged |rg -v "(^\*|master|development)" | xargs git br
 alias gbD='git branch -D'
 alias grb='git rebase -i'
 alias grbc='git rebase --continue'
+alias grba='git rebase --abort'
 
 # === Docker === #
 alias du='docker start'
