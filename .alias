@@ -2,6 +2,7 @@
 alias ll='ls -l'
 alias lla='ls -lA'
 alias uuidgen_lower="uuidgen |tr '[:upper:]' '[:lower:]'"
+alias ipaddr='ipconfig getifaddr en0'
 
 # === Git === #
 alias gl='git pull'
@@ -43,6 +44,7 @@ alias gbD='git branch -D'
 alias grb='git rebase -i'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
+alias grlg='git reflog'
 
 # === Docker === #
 alias du='docker start'
