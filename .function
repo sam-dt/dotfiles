@@ -38,7 +38,7 @@ fireloc() {
 
 # Create a new directory and enter it
 mkd () {
-  mkdir -p "$@" && cd "$@" || exit
+  mkdir -p "$@" && cd "$@" || return
 }
 
 # Open man page as PDF
