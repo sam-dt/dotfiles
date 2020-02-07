@@ -36,6 +36,7 @@ sudo gem install cocoapods
 
 # Yarn - JS/TS package manager
 npm install -g yarn
+npm install -g angular-cli
 
 # tpm - tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \

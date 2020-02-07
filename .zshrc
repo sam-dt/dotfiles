@@ -1,9 +1,9 @@
 # === General settings === #
-# Load env vars
-source "$HOME/.env"
-
 # Load aliases
 source "$HOME/.alias"
+
+# Load env vars
+source "$HOME/.env"
 
 # Load functions
 source "$HOME/.function"
@@ -21,6 +21,9 @@ SAVEHIST=1000
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory  # Immediately append to the history file, not just when a term is killed
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 
 # append completion to fpath
 fpath=(~/.zsh/completion $fpath)
