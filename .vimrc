@@ -70,6 +70,9 @@ set statusline+=/%L " total lines
 " Disable autocomment on new line
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Disable swap files
+set noswapfile
+
 " }}}
 
 " === Mappings and abbreviations === {{{
@@ -79,7 +82,7 @@ nnoremap <Leader>ve :e $MYVIMRC<CR>
 " Reload vimr configuration file
 nnoremap <Leader>vr :source $MYVIMRC<CR>
 
-" turn off search highlight shortcut
+" mapping to turn off search highlight 
 nnoremap <leader><space> :noh<cr>
 
 " Disable arrow keys
@@ -104,13 +107,6 @@ inoremap <C-p> <esc>pli
 nnoremap <Space> viw
 inoremap <C-u> <esc>viwU<esc>ei
 
-" surround a word
-nnoremap <Leader>' viw<esc>a'<esc>bi'<esc>lel
-nnoremap <Leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <Leader>( viw<esc>a)<esc>bi(<esc>lel
-nnoremap <Leader>[ viw<esc>a]<esc>bi[<esc>lel
-nnoremap <Leader>{ viw<esc>a}<esc>bi{<esc>lel
-
 " window resize shortcuts
 nnoremap L :vertical resize +5<CR>
 nnoremap H :vertical resize -5<CR>
@@ -119,6 +115,9 @@ nnoremap K :resize -5<CR>
 
 " remap join lines
 nnoremap <C-n> J
+
+" split line mapping
+nnoremap <C-m> mzi<CR><Esc>`z
 
 " window split shortcuts
 nnoremap <Leader>sv <C-w>v<C-w>l
@@ -262,29 +261,36 @@ nnoremap <Leader>r :Rg
 let g:rg_command = 'rg --vimgrep -S'
 " }}}
 
-" === TypeScript === {{{
+" === TypeScript & JavaScript === {{{
 " by default .ts file are not identified as typescript and .tsx files are not
 " identified as typescript react file, so add following
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 autocmd BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
 " typescript specific abbreviations
-augroup typescript_abbrev
+augroup tsjs_abbrev
 	autocmd!
-	autocmd FileType typescript,typescript.tsx :iabbrev <buffer> iff if ()
-	autocmd FileType typescript,typescript.tsx :iabbrev <buffer> fnc function ()
-	autocmd FileType typescript,typescript.tsx :iabbrev cosnt const
-	autocmd FileType typescript,typescript.tsx :iabbrev fnuction function
-	autocmd FileType typescript,typescript.tsx :iabbrev raect react
-	autocmd FileType typescript,typescript.tsx :iabbrev expdeffnc export default function
-	autocmd FileType typescript,typescript.tsx :iabbrev impreact import React from 'react';
-	autocmd FileType typescript,typescript.tsx :iabbrev impstyled import styled from 'styled-components';
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :iabbrev <buffer> iff if ()
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :iabbrev <buffer> fnc function ()
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :iabbrev cosnt const
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :iabbrev fnuction function
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :iabbrev raect react
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :iabbrev expdeffnc export default function
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :iabbrev impreact import React from 'react';
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :iabbrev impstyled import styled from 'styled-components';
 augroup END
 
 " typscript specific mappings
-augroup typescript_map
+augroup tsjs_map
 	" add semicolon to end of line
-	autocmd FileType typescript,typescript.tsx :nnoremap <Leader>sc mqA;<Esc>`q
+	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :nnoremap <Leader>sc mqA;<Esc>`q
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap " ""<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap ' ''<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap ( ()<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap [ []<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap { {}<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap {<CR> {<CR>}<ESC>O
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap {;<CR> {<CR>};<ESC>O
 augroup END
 
 " Autocompletion behavior
@@ -308,6 +314,12 @@ nnoremap <Leader>esf :ESAutoFix<CR>
 " === Coc === {{{
 " Setup coc-prettier command 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Remap goto commands
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 " }}}
 
 " === Prettier === {{{
