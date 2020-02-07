@@ -45,6 +45,10 @@ alias grb='git rebase -i'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
 alias grlg='git reflog'
+alias gbs='git bisect'
+alias gbsg='git bisect good'
+alias gbsb='git bisect bad'
+alias gbsr='git bisect reset'
 
 # === Docker === #
 alias du='docker start'
