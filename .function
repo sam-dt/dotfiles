@@ -22,6 +22,11 @@ grfh () {
 	done
 }
 
+# Git merge pull request
+gmpr () {
+  git merge --no-ff "$1" && git push && git branch -D "$1" && git branch -D "origin/$1"
+}
+
 # === Docker functions === #
 dt () {
 	docker exec -it "$1" /bin/sh
