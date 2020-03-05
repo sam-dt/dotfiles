@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# This script is meant for a new machine to quickly setup and install
-# applications
+# This script is meant for a new machine to quickly setup and install applications
+# General setup consists of neovim, tmux, git and iterm2 in zsh shell
 
 # install XCode cli tools
 xcode-select —-install
