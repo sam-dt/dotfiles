@@ -56,8 +56,7 @@ npm install -g yarn
 npm install -g angular-cli
 
 # tpm - tmux plugin manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
-	echo "run -b $HOME/.tmux/plugins/tpm/tpm" >> "$HOME/.tmux.conf"
+git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 
 # === Vim setup === #
 # install pynvim
