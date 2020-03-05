@@ -63,6 +63,12 @@ alias drmi='docker rmi'
 alias dps='docker ps'
 alias db='docker build'
 
+# === Vagrant === #
+alias vsa='vagrant suspend -a'
+alias vst='vagrant status'
+alias vh='vagrant halt'
+alias vu='vagrant up'
+
 # === Tmux === #
 alias tn='tmux new-session'
 alias tns='tmux new-session -s'
