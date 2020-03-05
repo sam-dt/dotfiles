@@ -204,11 +204,17 @@ call plug#begin()
   " GraphQL syntax support
   Plug 'jparise/vim-graphql'
 
-  " Syntax Highlighting for .tsx files (JSX code - React)
-  Plug 'ianks/vim-tsx'
+  " JavaScript syntax highlighting
+  Plug 'pangloss/vim-javascript'
+
+  " JavaScript JSX syntax highlighting
+  Plug 'maxmellon/vim-jsx-pretty'
 
   " TypeScript syntax highlighting
   Plug 'leafgarland/typescript-vim'
+
+  " TypeScript JSX highlighting
+  Plug 'ianks/vim-tsx'
 
   " Theme
   Plug 'dikiaap/minimalist'
@@ -242,7 +248,6 @@ call plug#begin()
 
 	" vim surround
 	Plug	'tpope/vim-surround'
-
 
 call plug#end()
 " }}}
