@@ -20,11 +20,28 @@ brew install rg # better grep variant
 brew install zsh
 brew install zplug
 brew install tmux
+brew install fortune
+brew install cowsay # mooo
+brew install sl # choo-choo
+brew install jq jsonlint
+brew install fzf
+brew install htop
+brew install docker docker-compose
+
 
 # === Brew casks === #
 brew cask install iterm2
 brew cask install firefox
 brew cask install google-chrome
+brew cask install docker
+brew cask install switchhosts
+brew cask install rectangle # window position/resize
+brew cask install qlcolorcode qlstephen qlmarkdown qlimagesize
+brew cask install quicklook-json suspicious-package quicklookase qlvideo
+
+# === Brew fonts === #
+brew tap homebrew/cask-fonts
+brew cask install font-fira-code
 
 # === Other installations === #
 # Pip3 - python package manager
@@ -34,7 +51,7 @@ cd "$HOME" && curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
 # CocoaPods - iOS package manager
 sudo gem install cocoapods
 
-# Yarn - JS/TS package manager
+# npm global installs
 npm install -g yarn
 npm install -g angular-cli
 
@@ -50,3 +67,8 @@ python3 -m pip install --upgrade pynvim
 # docker completion
 mkdir -p ~/.zsh/completion && \
  curl -L https://raw.githubusercontent.com/docker/compose/1.24.1/contrib/completion/zsh/_docker-compose > ~/.zsh/completion/_docker-compose
+
+# === Configurations === #
+
+# Catalina only (for quick look plugins) - remove quarantine attributes
+xattr -d -r com.apple.quarantine ~/Library/QuickLook
