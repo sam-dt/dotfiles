@@ -28,6 +28,16 @@ dt () {
 }
 
 # === Other functions === #
+# open link in browser
+chrome () {
+  open -a /Applications/Google\ Chrome.app "$1"
+}
+
+firefox () {
+  open -a /Applications/Firefox.app "$1"
+}
+
+# open localhost on port
 chromeloc () { 
 	open -a /Applications/Google\ Chrome.app "http://localhost:$1"
 }
