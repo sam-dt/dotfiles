@@ -177,6 +177,9 @@ endif
 
 " Add plug-ins
 call plug#begin()
+  " Motion
+  Plug 'justinmk/vim-sneak'
+
   " Color schemes
   Plug 'rafi/awesome-vim-colorschemes'
 
