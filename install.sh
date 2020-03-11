@@ -35,6 +35,7 @@ brew cask install firefox
 brew cask install google-chrome
 brew cask install docker
 brew cask install switchhosts
+brew cask install insomnia
 brew cask install rectangle # window position/resize
 brew cask install qlcolorcode qlstephen qlmarkdown qlimagesize
 brew cask install quicklook-json suspicious-package quicklookase qlvideo
