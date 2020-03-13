@@ -86,7 +86,7 @@ alias php72='/usr/local/opt/php@7.2/bin/php'
 alias ezsh='nvim ~/.dotfiles/.zshrc && source ~/.zshrc'
 alias eali='nvim ~/.dotfiles/.alias && source ~/.alias'
 alias efun='nvim ~/.dotfiles/.function && source ~/.function'
-alias egit='nvim ~/.dotfiles/.gitconfig && source ~/.gitconfig'
+alias egit='nvim ~/.dotfiles/.gitconfig'
 alias etmu='nvim ~/.dotfiles/.tmux.conf && tmux source-file ~/.tmux.conf'
 alias eenv='nvim ~/.dotfiles/.env && source ~/.env'
 
