@@ -1,6 +1,6 @@
 # === General === #
-alias ll='ls -l'
-alias lla='ls -lA'
+alias ll='ls -lh'
+alias lla='ls -lAh'
 alias uuidgen_lower="uuidgen |tr '[:upper:]' '[:lower:]'"
 alias ipaddr='ipconfig getifaddr en0'
 
