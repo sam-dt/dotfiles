@@ -28,7 +28,6 @@ brew install fzf
 brew install htop
 brew install docker docker-compose
 
-
 # === Brew casks === #
 brew cask install iterm2
 brew cask install firefox
@@ -58,6 +57,9 @@ npm install -g angular-cli
 
 # tpm - tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+
+# launchd util
+sudo gem install lunchy
 
 # === Vim setup === #
 # install pynvim

@@ -31,6 +31,12 @@ set allow-rename off
 fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
 
+# completion for lunchy
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+  . $LUNCHY_DIR/lunchy-completion.zsh
+ fi
+
 # === zplug === #
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
