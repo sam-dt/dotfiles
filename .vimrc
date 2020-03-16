@@ -245,6 +245,9 @@ call plug#begin()
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
 
+  " Maintain yank history
+  Plug 'svermeulen/vim-yoink'
+
 call plug#end()
 " }}}
 
@@ -387,6 +390,14 @@ let g:Mm_ShowHidden = 1
 
 " === Vim Fugitive === {{{
 set diffopt+=vertical
+"}}}
+
+" === Vim Yoink === {{{
+nmap <c-q> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
 "}}}
 
 " === Ale === {{{
