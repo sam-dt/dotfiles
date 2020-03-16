@@ -248,6 +248,9 @@ call plug#begin()
   " Maintain yank history
   Plug 'svermeulen/vim-yoink'
 
+  " HTML/XML snippets
+  Plug 'mattn/emmet-vim'
+
 call plug#end()
 " }}}
 
