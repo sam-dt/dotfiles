@@ -216,9 +216,6 @@ call plug#begin()
   " TypeScript JSX highlighting
   Plug 'ianks/vim-tsx'
 
-  " Theme
-  Plug 'dikiaap/minimalist'
-
   " Template string highlighting
   Plug 'Quramy/vim-js-pretty-template'
 
