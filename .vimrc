@@ -100,9 +100,6 @@ nnoremap - ddp
 nnoremap _ ddkP
 inoremap <C-d> <esc>ddi
 
-" paste shortcuts
-inoremap <C-p> <esc>pli
-
 " select shortcuts
 nnoremap <Space> viw
 inoremap <C-u> <esc>viwU<esc>ei
