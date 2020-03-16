@@ -351,8 +351,8 @@ let g:prettier#config#single_quote = 'true'
 " template string types
 call jspretmpl#register_tag('gql', 'graphql')
 call jspretmpl#register_tag('styled', 'scss')
-autocmd FileType typescript JsPreTmpl
-autocmd FileType typescript.tsx JsPreTmpl
+autocmd FileType javascript,typescript JsPreTmpl
+autocmd FileType javascriptreact,typescript.tsx JsPreTmpl
 "}}}
 
 " === Git Blame === {{{
