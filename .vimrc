@@ -322,6 +322,12 @@ nnoremap <Leader>esf :ESAutoFix<CR>
 " Setup coc-prettier command 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
+" Map show documentation window
+nnoremap <Leader>d :call CocAction('doHover')<CR>
+
+" Map show completion
+inoremap <silent><expr> <c-space> coc#refresh()
+
 " Remap goto commands
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
