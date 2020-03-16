@@ -231,9 +231,6 @@ call plug#begin()
 	" quickfix-reflector
 	Plug 'stefandtw/quickfix-reflector.vim'
 
-	" Vim fugitive
-	Plug 'tpope/vim-fugitive'
-
 	" Ale for linting bash/sh
 	Plug 'dense-analysis/ale'
 
@@ -243,8 +240,10 @@ call plug#begin()
 	" Line commenter
 	Plug 'scrooloose/nerdcommenter'
 
-	" vim surround
+	" Tpope's awesome plugins
 	Plug	'tpope/vim-surround'
+	Plug 'tpope/vim-fugitive'
+	Plug 'tpope/vim-repeat'
 
 call plug#end()
 " }}}
