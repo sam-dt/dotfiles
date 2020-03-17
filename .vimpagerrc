@@ -1,0 +1,13 @@
+" See vimrc for more details on the config used here
+
+syntax on
+
+set hidden
+
+set incsearch
+set showmatch
+set hlsearch
+
+set ignorecase
+set smartcase
+
