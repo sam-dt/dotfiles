@@ -27,6 +27,7 @@ brew install jq jsonlint
 brew install fzf
 brew install htop
 brew install docker docker-compose
+brew install vimpager
 
 # === Brew casks === #
 brew cask install iterm2
