@@ -297,13 +297,13 @@ augroup END
 augroup tsjs_map
 	" add semicolon to end of line
 	autocmd FileType typescript,typescript.tsx,javascript,javascriptreact :nnoremap <Leader>sc mqA;<Esc>`q
-  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap " ""<left>
-  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap ' ''<left>
-  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap ( ()<left>
-  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap [ []<left>
-  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap { {}<left>
-  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap {<CR> {<CR>}<ESC>O
-  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact inoremap {;<CR> {<CR>};<ESC>O
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact,json inoremap " ""<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact,json inoremap ' ''<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact,json inoremap ( ()<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact,json inoremap [ []<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact,json inoremap { {}<left>
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact,json inoremap {<CR> {<CR>}<ESC>O
+  autocmd FileType typescript,typescript.tsx,javascript,javascriptreact,json inoremap {;<CR> {<CR>};<ESC>O
 augroup END
 
 " Autocompletion behavior
