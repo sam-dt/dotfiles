@@ -1,6 +1,11 @@
 #!/bin/bash
 
 # === Git functions === #
+# Go to a branch that matches the first argument
+go () {
+  git branch |rg $1 |xargs git checkout
+}
+
 # Git add files by rgping from status
 gafs () {
 	for file in $(git status -s |rg "$1" |cut -c4-); do
