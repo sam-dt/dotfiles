@@ -199,7 +199,7 @@ call plug#begin()
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   "coc extensions
-  let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier']
+  let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-yaml']
 
   " GraphQL syntax support
   Plug 'jparise/vim-graphql'
@@ -253,6 +253,9 @@ call plug#begin()
 
   " HTML/XML snippets
   Plug 'mattn/emmet-vim'
+
+  " Ansible syntax highlight
+  Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 " }}}
@@ -319,6 +322,12 @@ nnoremap <Leader>tsf :AutoFix<CR>
 " add autofix command for es
 command! -nargs=0 ESAutoFix :CocCommand eslint.executeAutofix
 nnoremap <Leader>esf :ESAutoFix<CR>
+" }}}
+
+" === YAML {{{
+augroup yaml_map
+  autocmd FileType yaml :inoremap " ""<left>
+augroup END
 " }}}
 
 " === Coc === {{{
