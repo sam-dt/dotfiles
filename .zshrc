@@ -63,11 +63,11 @@ precmd() {
 zstyle ':vcs_info:*' enable git
 
 # format vcs info msg
-zstyle ':vcs_info:git*' actionformats "%F{yellow}<%b> %F{blue}%a%c"
+zstyle ':vcs_info:git*' actionformats "%F{yellow}<%b> %F{blue}(%a)%c"
 zstyle ':vcs_info:git*' formats "%F{yellow}<%b>%c"
 zstyle ':vcs_info:*' check-for-changes true
 
-# untracked files hook
+# indicate uncommited status
 zstyle ':vcs_info:git*+set-message:*' hooks git-clean
 
 +vi-git-clean(){
