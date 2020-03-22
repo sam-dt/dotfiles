@@ -5,6 +5,7 @@
 	excludesfile = /Users/sam/.gitignore_global
 	ignorecase = false
 	editor = nvim
+  pager = less
 [mergetool "nvim"]
   cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 [alias]
@@ -13,7 +14,7 @@
 	st = status
 	br = branch
 [diff]
-	tool = vimdiff
+	tool = less
 [merge]
 	tool = nvim
 [difftool]
