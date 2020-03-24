@@ -27,22 +27,25 @@ bindkey '^R' history-incremental-search-backward
 
 set allow-rename off
 
-# append completion to fpath
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
-
-# completion for lunchy
-LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
-if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
-  . $LUNCHY_DIR/lunchy-completion.zsh
- fi
-
 export PAGER=vimpager
+
+export LANG=en_US.UTF-8
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# === Completion === #
+# append completion to fpath
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
+
+# lunchy
+LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
+if [ -f $LUNCHY_DIR/lunchy-completion.zsh ]; then
+  . $LUNCHY_DIR/lunchy-completion.zsh
+ fi
 
 # === Prompt === #
 # enable commands processing
