@@ -4,6 +4,7 @@ alias lla='ls -lAh'
 alias uuidgen_lower="uuidgen |tr '[:upper:]' '[:lower:]'"
 alias ipaddr='ipconfig getifaddr en0'
 alias less='vimpager'
+alias vim='nvim'
 
 # === Git === #
 alias gl='git pull'
