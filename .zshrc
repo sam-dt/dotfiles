@@ -82,23 +82,19 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-clean
 }
 
 # setup
-PROMPT='$NEWLINE%F{magenta}$(basename $PWD) ${vcs_info_msg_0_} $NEWLINE%F{cyan}-> '
+PROMPT='$NEWLINE%F{magenta}$(pwd |sed "s?$HOME?~?") ${vcs_info_msg_0_} $NEWLINE%F{cyan}-> '
 
-# === zplug === #
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
+# === Antigen === #
+source /usr/local/share/antigen/antigen.zsh
 
-# z - jump to directories
-zplug 'agkozak/zsh-z'
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle agkozak/zsh-z
 
-# autosuggestions
-zplug 'zsh-users/zsh-autosuggestions'
+antigen apply
+
+# zsh-z
 bindkey '^ ' autosuggest-accept
-
-zplug load
-# end zplug
-
-export LANG=en_US.UTF-8
 
 # moooooooooo
 fortune | cowsay
+

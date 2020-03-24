@@ -18,7 +18,7 @@ brew install --HEAD neovim # nightly build, required for coc.nvim
 brew install python3
 brew install rg # better grep variant
 brew install zsh
-brew install zplug
+brew install antigen
 brew install tmux
 brew install fortune
 brew install cowsay # mooo
