@@ -28,6 +28,7 @@ brew install fzf
 brew install htop
 brew install docker docker-compose
 brew install vimpager
+brew install shellcheck
 
 # === Brew casks === #
 brew cask install iterm2
