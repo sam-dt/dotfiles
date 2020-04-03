@@ -13,6 +13,9 @@
 	ci = commit
 	st = status
 	br = branch
+  rb = rebase
+  pl = pull
+  ps = push
 [diff]
 	tool = less
 [merge]
