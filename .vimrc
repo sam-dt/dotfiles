@@ -1,6 +1,6 @@
 " === General vim settings === {{{
 " Greeting
-echo ">^.^<"
+echo "ಠ_ಠ"
 
 " Remap leader key
 let mapleader = ","
@@ -240,13 +240,11 @@ call plug#begin()
 	" Easy split navigation with tmux
 	Plug 'christoomey/vim-tmux-navigator'
 
-	" Line commenter
-	Plug 'scrooloose/nerdcommenter'
-
 	" Tpope's awesome plugins
 	Plug	'tpope/vim-surround'
 	Plug 'tpope/vim-fugitive'
 	Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-commentary'
 
   " Maintain yank history
   Plug 'svermeulen/vim-yoink'
