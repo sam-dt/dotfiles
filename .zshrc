@@ -85,14 +85,10 @@ PROMPT='$NEWLINE%F{magenta}$(pwd |sed "s?$HOME?~?") ${vcs_info_msg_0_} $NEWLINE%
 # === Antigen === #
 source /usr/local/share/antigen/antigen.zsh
 
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle agkozak/zsh-z
+antigen bundle zsh-users/zsh-autosuggestions >> /dev/null
+antigen bundle agkozak/zsh-z >> /dev/null
 
-antigen apply
+antigen apply 
 
 # zsh-z
 bindkey '^ ' autosuggest-accept
-
-# moooooooooo
-fortune | cowsay
-
