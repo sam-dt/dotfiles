@@ -61,14 +61,9 @@
 (setq projectile-project-search-path '("~/codifly/" "~/napoleongames/" "~/.dotfiles" "~/Projects"))
 (setq projectile-use-git-grep t)
 
-;; setup eslint
-;; (add-hook 'js2-mode-hook
-;;           (defun my-js2-mode-setup ()
-            ;; (flycheck-mode t)
-            ;; (when (executable-find "eslint")
-            ;;   (flycheck-select-checker 'javascript-eslint))))
 ;; setup flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(setq flycheck-check-syntax-automatically '(save mode-enabled new-line))
 
 ;; setup avy
 (setq avy-all-windows t)
@@ -83,4 +78,4 @@
 (key-chord-mode 1)
 (define-key evil-normal-state-map "-" 'move-text-up)
 (define-key evil-normal-state-map "_" 'move-text-down)
-(define-key evil-normal-state-map (kbd "C-f") 'eslintd-fix)
+(define-key evil-normal-state-map (kbd "C-f") 'eslint-fix)
