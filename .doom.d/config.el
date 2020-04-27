@@ -68,9 +68,6 @@
 ;; setup avy
 (setq avy-all-windows t)
 
-;; use command key as meta
-(setq mac-option-modifier 'super)
-(setq mac-command-modifier 'meta)
 
 ;; Key mappings
 (setq key-chord-two-keys-delay 0.5)
