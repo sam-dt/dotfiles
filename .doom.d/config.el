@@ -58,7 +58,7 @@
   :hook prog-mode) ;; Enables fira-code-mode automatically for programming major modes
 
 ;; setup projectile
-(setq projectile-project-search-path '("~/codifly/" "~/napoleongames/" "~/.dotfiles"))
+(setq projectile-project-search-path '("~/codifly/" "~/napoleongames/" "~/.dotfiles" "~/Projects"))
 (setq projectile-use-git-grep t)
 
 ;; setup eslint
