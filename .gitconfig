@@ -1,6 +1,6 @@
 [user]
 	name = Sam Dhondt
-	email = sam@codifly.be
+	email = sam.dhondt@codifly.be
 [core]
 	excludesfile = /Users/sam/.gitignore_global
 	ignorecase = false
