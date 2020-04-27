@@ -54,3 +54,4 @@
 (package! move-text)
 (package! key-chord)
 (package! prettier-js)
+(package! eslint-fix)
