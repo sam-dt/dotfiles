@@ -68,6 +68,12 @@
 ;; setup avy
 (setq avy-all-windows t)
 
+;; setup doom-modeline
+(setq doom-modeline-vcs-max-length 25)
+(setq doom-modeline-buffer-encoding nil)
+(setq doom-modeline-persp-name nil)
+(setq doom-modeline-lsp nil)
+(setq doom-modeline-buffer-file-name-style 'relative-to-project)
 
 ;; Key mappings
 (setq key-chord-two-keys-delay 0.5)
