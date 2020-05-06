@@ -76,3 +76,8 @@ mkdir -p ~/.zsh/completion && \
 
 # Catalina only (for quick look plugins) - remove quarantine attributes
 xattr -d -r com.apple.quarantine ~/Library/QuickLook
+
+# Enable key repeat for vscode (useful for vim extension)
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false 
+defaults write com.microsoft.VSCodeInsiders ApplePressAndHoldEnabled -bool false 
+defaults delete -g ApplePressAndHoldEnabled     
