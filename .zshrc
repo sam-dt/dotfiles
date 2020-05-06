@@ -81,7 +81,10 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-clean
 }
 
 # setup
-PROMPT='$NEWLINE%F{magenta}$(pwd |sed "s?$HOME?~?") ${vcs_info_msg_0_} $NEWLINE%F{cyan}-> '
+PROMPT='%F{magenta}$(pwd |sed "s?$HOME?~?") ${vcs_info_msg_0_}${NEWLINE}%F{cyan}-> '
+
+# add newline before prompt
+precmd() { print "" }
 
 # === Antigen === #
 source /usr/local/share/antigen/antigen.zsh
