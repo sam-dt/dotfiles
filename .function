@@ -47,6 +47,11 @@ chromeloc () {
 	open -a /Applications/Google\ Chrome.app "http://localhost:$1"
 }
 
+chromeloc_nows () { 
+  open /Applications/Google\ Chrome.app --args --user-data-dir="/var/tmp/Chrome
+  dev session" --disable-web-security "http://localhost:$1"
+}
+
 fireloc() {
 	open -a /Applications/Firefox.app "http://localhost:$1"
 }
