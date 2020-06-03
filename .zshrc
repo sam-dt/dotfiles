@@ -58,6 +58,7 @@ NOK=$'\u2718'
 # load zsh version control info
 autoload -Uz vcs_info
 precmd() { 
+  print ""
   vcs_info
 }
 
@@ -65,8 +66,8 @@ precmd() {
 zstyle ':vcs_info:*' enable git
 
 # format vcs info msg
-zstyle ':vcs_info:git*' actionformats "%F{yellow}<%b> %F{blue}(%a)%c"
-zstyle ':vcs_info:git*' formats "%F{yellow}<%b>%c"
+zstyle ':vcs_info:git*' actionformats '%F{yellow}<%b> %F{blue}(%a)%c'
+zstyle ':vcs_info:git*' formats '%F{yellow}<%b>%c'
 zstyle ':vcs_info:*' check-for-changes true
 
 # indicate uncommited status
@@ -81,10 +82,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-clean
 }
 
 # setup
-PROMPT='%F{magenta}$(pwd |sed "s?$HOME?~?") ${vcs_info_msg_0_}${NEWLINE}%F{cyan}-> '
-
-# add newline before prompt
-precmd() { print "" }
+PROMPT='%F{magenta}$(pwd |sed "s?$HOME?~?") ${vcs_info_msg_0_} ${NEWLINE}%F{cyan}-> '
 
 # === Antigen === #
 source /usr/local/share/antigen/antigen.zsh
