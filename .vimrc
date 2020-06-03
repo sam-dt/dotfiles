@@ -14,8 +14,11 @@ set ignorecase
 set smartcase
 
 set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set autoindent
 set expandtab
+set smarttab
 
 set textwidth=80
 
@@ -41,16 +44,12 @@ vnoremap / /\v
 nnoremap <Leader>ve :vsplit $MYVIMRC<CR>
 nnoremap <Leader>vr :source $MYVIMRC<CR>
 
-nnoremap <C-n> :noh<CR>
+nnoremap <C-h> :noh<CR>
 
 nnoremap - ddkP
 nnoremap _ ddp
 
-nnoremap <C-s> :Rg 
-
-augroup javascript_typescript_mappings
-  autocmd FileType typescript,javascript nnoremap <C-f> :CocCommand eslint.executeAutofix<CR>
-augroup END
+nnoremap <Leader>wc :Copen<CR>
 
 " === Plugins === "
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -69,8 +68,10 @@ call plug#begin()
   Plug 'justinmk/vim-sneak'
   Plug 'svermeulen/vim-yoink'
   Plug 'jiangmiao/auto-pairs'
+  Plug 'vim-airline/vim-airline'
 
-  Plug 'jremmen/vim-ripgrep'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
   Plug 'stefandtw/quickfix-reflector.vim'
   Plug 'ctrlpvim/ctrlp.vim'
 
@@ -89,6 +90,8 @@ call plug#begin()
   Plug 'dense-analysis/ale'
 
   Plug 'pearofducks/ansible-vim'
+
+  Plug 'vimwiki/vimwiki'
 call plug#end()
 
 " === Theme === "
@@ -152,22 +155,18 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>fs  <Plug>(coc-format-selected)
 
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
-augroup mygroup
+augroup cocvim
   autocmd!
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd FileType typescript,javascript nnoremap <C-f> :CocCommand eslint.executeAutofix<CR>
 augroup end
-
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>ff  <Plug>(coc-fix-current)
 
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-nmap <leader>or :OR<CR>
-
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+nnoremap <leader>fi :OR<CR>
 
 " === Angular CLI support === "
 nnoremap <Leader>at :ETemplate<CR>
@@ -176,10 +175,13 @@ nnoremap <Leader>ac :EComponent<CR>
 
 " === Vim Fugitive === "
 set diffopt+=vertical
+nnoremap <Leader>gg :Gstatus<CR>
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gl :Gpull<CR>
 
 " === Vim Yoink === "
 nmap <C-n> <Plug>(YoinkPostPasteSwapBack)
-nmap <C-p> <Plug>(YoinkPostPasteSwapForward)
+nmap <C-m> <Plug>(YoinkPostPasteSwapForward)
 
 nmap p <Plug>(YoinkPaste_p)
 nmap P <Plug>(YoinkPaste_P)
@@ -191,3 +193,23 @@ let g:ale_linters = {
 
 let g:ale_linters_explicit = 1
 
+" === Dispatch === "
+nnoremap <Leader>db :Dispatch! 
+nnoremap <Leader>df :Dispatch 
+
+" === Airline === "
+function! AirlineInit()
+  let g:airline_section_y = 0
+  let g:airline_section_z = 0
+endfunction
+autocmd VimEnter * call AirlineInit()
+
+let airline#extensions#coc#error_symbol = ''
+let airline#extensions#coc#warning_symbol = ''
+let airline#extensions#coc#stl_format_err = ''
+let airline#extensions#coc#stl_format_warn = ''
+
+" === fzf === "
+nnoremap <C-s> :Rg<CR>
+
+echo "ಠ_ಠ"
