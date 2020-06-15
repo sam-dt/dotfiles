@@ -88,6 +88,8 @@ call plug#begin()
   Plug 'ianks/vim-tsx'
   Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
+  Plug 'mattn/emmet-vim'
+
   Plug 'dense-analysis/ale'
 
   Plug 'pearofducks/ansible-vim'
