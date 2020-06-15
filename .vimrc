@@ -178,7 +178,7 @@ nnoremap <Leader>ac :EComponent<CR>
 
 " === Vim Fugitive === "
 set diffopt+=vertical
-nnoremap <Leader>gg :Gstatus<CR>
+nnoremap <C-g> :Gstatus<CR>
 nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gl :Gpull<CR>
 
@@ -215,4 +215,6 @@ let airline#extensions#coc#stl_format_warn = ''
 " === fzf === "
 nnoremap <C-s> :Rg<CR>
 
+" done
 echo "ಠ_ಠ"
+
