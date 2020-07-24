@@ -78,6 +78,7 @@ call plug#begin()
 
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'joshdick/onedark.vim'
+  Plug 'morhetz/gruvbox'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -98,8 +99,9 @@ call plug#begin()
 call plug#end()
 
 " === Theme === "
-colorscheme dracula
+" colorscheme dracula
 " colorscheme onedark
+colorscheme gruvbox
 set background=dark
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
