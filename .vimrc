@@ -65,9 +65,9 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-abolish'
 
   Plug 'justinmk/vim-sneak'
-  Plug 'svermeulen/vim-yoink'
   Plug 'jiangmiao/auto-pairs'
   Plug 'vim-airline/vim-airline'
 
@@ -181,13 +181,6 @@ set diffopt+=vertical
 nnoremap <C-g> :Gstatus<CR>
 nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gl :Gpull<CR>
-
-" === Vim Yoink === "
-nmap <C-n> <Plug>(YoinkPostPasteSwapBack)
-nmap <C-m> <Plug>(YoinkPostPasteSwapForward)
-
-nmap p <Plug>(YoinkPaste_p)
-nmap P <Plug>(YoinkPaste_P)
 
 " === Ale === "
 let g:ale_linters = {
