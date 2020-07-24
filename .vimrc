@@ -83,7 +83,8 @@ call plug#begin()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   Plug 'pangloss/vim-javascript'
-  Plug 'leafgarland/typescript-vim'
+  Plug 'jason0x43/vim-js-indent'
+  Plug 'HerringtonDarkholme/yats.vim'
   Plug 'bdauria/angular-cli.vim'	
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'ianks/vim-tsx'
