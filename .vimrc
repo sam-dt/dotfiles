@@ -47,6 +47,9 @@ nnoremap <Leader>vr :source $MYVIMRC<CR>
 nnoremap <C-h> :noh<CR>
 nnoremap <C-x> :Explore<CR>
 
+nnoremap <Leader>cp "*y
+vnoremap <Leader>cp "*y
+
 nnoremap - ddkP
 nnoremap _ ddp
 
