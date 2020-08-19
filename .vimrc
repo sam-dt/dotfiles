@@ -189,6 +189,7 @@ set diffopt+=vertical
 nnoremap <C-g> :Gstatus<CR>
 nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gl :Gpull<CR>
+nnoremap <Leader>gg :Glog!<CR>
 
 " === Ale === "
 let g:ale_linters = {
