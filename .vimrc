@@ -100,6 +100,8 @@ call plug#begin()
   Plug 'pearofducks/ansible-vim'
 
   Plug 'vimwiki/vimwiki'
+
+  Plug 'mustache/vim-mustache-handlebars'
 call plug#end()
 
 " === Theme === "
