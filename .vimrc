@@ -20,7 +20,7 @@ set autoindent
 set expandtab
 set smarttab
 
-set textwidth=80
+set textwidth=72
 
 syntax on
 
