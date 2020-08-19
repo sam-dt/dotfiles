@@ -5,6 +5,7 @@ alias uuidgen_lower="uuidgen |tr '[:upper:]' '[:lower:]'"
 alias ipaddr='ipconfig getifaddr en0'
 alias less='vimpager'
 alias vim='nvim'
+alias chmox='chmod'
 
 # === Git === #
 alias gl='git pull'
