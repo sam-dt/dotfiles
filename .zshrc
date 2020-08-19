@@ -90,3 +90,5 @@ antigen apply
 
 # zsh-z
 bindkey '^ ' autosuggest-accept
+
+fortune
