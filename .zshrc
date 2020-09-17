@@ -33,8 +33,12 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # === Completion === #
 # append completion to fpath
-fpath=(~/.zsh/completion $fpath)
-autoload -Uz compinit && compinit -i
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
 
 # lunchy
 LUNCHY_DIR=$(dirname `gem which lunchy`)/../extras
@@ -92,3 +96,5 @@ antigen apply
 bindkey '^ ' autosuggest-accept
 
 fortune
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
