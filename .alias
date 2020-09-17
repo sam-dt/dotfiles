@@ -69,6 +69,8 @@ alias drm='docker rm'
 alias drmi='docker rmi'
 alias dps='docker ps'
 alias db='docker build'
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
 
 # === Vagrant === #
 alias vsa='vagrant suspend -a'
