@@ -172,7 +172,7 @@ augroup cocvim
   autocmd!
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  autocmd FileType typescript,javascript nnoremap <C-f> :CocCommand eslint.executeAutofix<CR>
+  autocmd FileType typescript,javascript,typescript.tsx,javascriptreact nnoremap <C-f> :CocCommand eslint.executeAutofix<CR>
 augroup end
 nmap <leader>ff  <Plug>(coc-fix-current)
 
