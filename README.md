@@ -1,6 +1,6 @@
 # My dotfiles
 
-A collection of my personal configuration files including scripts for setup.
+A collection of my personal configuration files including scripts for setup. Aimed at OS X systems.
 
 ## Installation
 
