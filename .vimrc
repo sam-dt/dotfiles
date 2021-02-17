@@ -57,6 +57,8 @@ nnoremap _ ddp
 
 nnoremap <Leader>wc :Copen<CR>
 
+nnoremap <Leader>p :CtrlP .<CR>
+
 " === Autocommands === "
 
 augroup numbertoggle
