@@ -35,6 +35,8 @@ set noswapfile
 
 set scrolloff=1
 
+set nowrap
+
 " === Mappings === "
 inoremap jj <Esc>
 
