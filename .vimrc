@@ -98,12 +98,9 @@ call plug#begin()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
   Plug 'pangloss/vim-javascript'
-  Plug 'jason0x43/vim-js-indent'
   Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'bdauria/angular-cli.vim'	
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'ianks/vim-tsx'
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
   Plug 'mattn/emmet-vim'
 
@@ -114,6 +111,10 @@ call plug#begin()
   Plug 'vimwiki/vimwiki'
 
   Plug 'mustache/vim-mustache-handlebars'
+
+  Plug 'othree/xml.vim'
+
+  Plug 'axvr/org.vim'
 call plug#end()
 
 " === Theme === "
