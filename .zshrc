@@ -82,7 +82,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-clean
 }
 
 # setup
-PROMPT='%F{magenta}$(pwd |sed "s?$HOME?~?") ${vcs_info_msg_0_} ${NEWLINE}%F{cyan}-> '
+PROMPT='%F{magenta}$(pwd |sed "s?$HOME?~?") ${vcs_info_msg_0_} ${NEWLINE}%F{cyan}->%f '
 
 # === Antigen === #
 source /usr/local/share/antigen/antigen.zsh
@@ -94,7 +94,5 @@ antigen apply
 
 # zsh-z
 bindkey '^ ' autosuggest-accept
-
-fortune
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
