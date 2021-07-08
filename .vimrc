@@ -57,7 +57,6 @@ nnoremap _ ddp
 
 nnoremap <Leader>wc :Copen<CR>
 
-nnoremap <Leader>p :CtrlP .<CR>
 
 " === Autocommands === "
 
@@ -89,7 +88,6 @@ call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'stefandtw/quickfix-reflector.vim'
-  Plug 'ctrlpvim/ctrlp.vim'
 
   Plug 'dracula/vim', { 'as': 'dracula' }
   Plug 'joshdick/onedark.vim'
@@ -125,14 +123,6 @@ set background=dark
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
-" === CtrlP === "
-let g:ctrlp_map = '<C-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " === CoC === "
 let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-yaml']
@@ -229,6 +219,10 @@ let airline#extensions#coc#stl_format_warn = ''
 
 " === fzf === "
 nnoremap <C-s> :Rg<CR>
+nnoremap <C-p> :GFiles<CR>
+nnoremap <C-b> :Buffers<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+
 
 " done
 echo "ಠ_ಠ"
