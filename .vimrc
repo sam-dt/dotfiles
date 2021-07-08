@@ -127,6 +127,8 @@ call plug#begin()
   Plug 'nelsyeung/twig.vim'
   Plug 'stephpy/vim-php-cs-fixer'
 
+
+  Plug 'bdauria/angular-cli.vim'
 call plug#end()
 
 " === Theme === "
@@ -196,11 +198,6 @@ nmap <leader>ff  <Plug>(coc-fix-current)
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 nnoremap <leader>fi :OR<CR>
 
-" === Angular CLI support === "
-nnoremap <Leader>at :ETemplate<CR>
-nnoremap <Leader>as :EStylesheet<CR>
-nnoremap <Leader>ac :EComponent<CR>
-
 " === Vim Fugitive === "
 set diffopt+=vertical
 nnoremap <C-g> :Git<CR>
@@ -248,6 +245,15 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 " === php-cs-fixer === "
 let g:php_cs_fixer_path = "vendor/bin/php-cs-fixer"
 
+" === Angular CLI support === "
+autocmd VimEnter * if globpath('.','angular.json') != '' | call angular_cli#init() | endif
+
+nnoremap <Leader>at :ETemplate<CR>
+nnoremap <Leader>as :EStylesheet<CR>
+nnoremap <Leader>ac :EComponent<CR>
+nnoremap <Leader>ap :ESpec<CR>
+
+let g:angular_cli_use_dispatch = 1
 
 " done
 echo "ಠ_ಠ"
