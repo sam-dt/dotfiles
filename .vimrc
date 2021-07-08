@@ -203,10 +203,14 @@ nnoremap <Leader>ac :EComponent<CR>
 
 " === Vim Fugitive === "
 set diffopt+=vertical
-nnoremap <C-g> :Gstatus<CR>
-nnoremap <Leader>gp :Gpush<CR>
-nnoremap <Leader>gl :Gpull<CR>
-nnoremap <Leader>gg :Glog!<CR>
+nnoremap <C-g> :Git<CR>
+nnoremap <Leader>gp :Git push<CR>
+nnoremap <Leader>gpF :Git push --force-with-lease<CR>
+nnoremap <Leader>gl :Git pull<CR>
+nnoremap <Leader>gg :Gclog!<CR>
+nnoremap <Leader>gc :Git commit -vsS<CR>
+nnoremap <Leader>gcn :Git commit -vsS -n<CR>
+nnoremap <Leader>gca :Git commit -vsS --amend<CR>
 
 " === Ale === "
 let g:ale_linters = {
