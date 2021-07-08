@@ -57,6 +57,7 @@ nnoremap _ ddp
 
 nnoremap <Leader>wc :Copen<CR>
 
+vnoremap <Leader>p "_dP
 
 " === Autocommands === "
 
@@ -74,6 +75,18 @@ augroup php
   autocmd FileType php iabbrev pubfun public function
   autocmd FileType php iabbrev prifun private function
   autocmd FileType php iabbrev fincla final class
+augroup END
+
+augroup setfiletypes
+  autocmd!
+  autocmd BufNewFile,BufRead Jenkinsfile setf groovy
+  autocmd BufNewFile,BufRead Dockerfile* setf dockerfile
+  autocmd BufNewFile,BufRead nginx.conf* setf nginx
+augroup END
+
+augroup json
+  autocmd!
+  autocmd FileType json setlocal wrap
 augroup END
 
 " === Plugins === "
@@ -127,8 +140,11 @@ call plug#begin()
   Plug 'nelsyeung/twig.vim'
   Plug 'stephpy/vim-php-cs-fixer'
 
+  Plug 'chr4/nginx.vim'
 
   Plug 'bdauria/angular-cli.vim'
+
+  Plug 'jparise/vim-graphql'
 call plug#end()
 
 " === Theme === "
