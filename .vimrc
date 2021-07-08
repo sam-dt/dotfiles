@@ -66,6 +66,16 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 
+augroup php
+  autocmd!
+  autocmd FileType php setlocal shiftwidth=4 tabstop=4
+  autocmd FileType php nnoremap <Leader>ff :call PhpCsFixerFixFile()<CR>
+  autocmd FileType php nnoremap <C-f> :ALEFix<CR>
+  autocmd FileType php iabbrev pubfun public function
+  autocmd FileType php iabbrev prifun private function
+  autocmd FileType php iabbrev fincla final class
+augroup END
+
 " === Plugins === "
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -113,6 +123,10 @@ call plug#begin()
   Plug 'othree/xml.vim'
 
   Plug 'axvr/org.vim'
+
+  Plug 'nelsyeung/twig.vim'
+  Plug 'stephpy/vim-php-cs-fixer'
+
 call plug#end()
 
 " === Theme === "
@@ -196,7 +210,11 @@ nnoremap <Leader>gg :Glog!<CR>
 
 " === Ale === "
 let g:ale_linters = {
-\   'sh': ['shellcheck'],
+\   'sh': ['shellcheck']
+\}
+
+let g:ale_fixers = {
+\   'php': ['prettier']
 \}
 
 let g:ale_linters_explicit = 1
@@ -222,6 +240,9 @@ nnoremap <C-s> :Rg<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <C-b> :Buffers<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+
+" === php-cs-fixer === "
+let g:php_cs_fixer_path = "vendor/bin/php-cs-fixer"
 
 
 " done
