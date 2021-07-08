@@ -3,7 +3,22 @@
 # === Git functions === #
 # Go to a branch that matches the first argument
 go () {
-  git branch |rg $1 -m 1 |xargs git checkout
+  local branch=$(git branch |rg "$1" |sed 's/ *//g')
+  local branchCount=$(echo "$branch" |wc -l |sed 's/ *//g')
+  case $branchCount in
+    0)
+      echo "No matches found."
+      ;;
+    1)
+      if [[ "$branch" == \** ]]; then
+        echo "Already there."
+      else
+        git checkout "$branch"
+      fi
+      ;;
+    *)
+      echo "$branch"
+  esac
 }
 
 # Git add files by rgping from status
