@@ -39,6 +39,8 @@ fi
 
 autoload -Uz compinit
 compinit
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
 
 # === Prompt === #
 # enable commands processing
@@ -54,6 +56,7 @@ autoload -Uz vcs_info
 precmd() { 
   print ""
   vcs_info
+  echo -e "\033]${PWD##*/}\007"
 }
 
 # only enable loading git for prompt info
