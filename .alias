@@ -78,6 +78,7 @@ alias dps='docker ps --format "table {{.Names}}\t{{.Image}}\t{{.ID}}"'
 alias db='docker build'
 alias dcu='docker compose up'
 alias dcd='docker compose down'
+alias dka='docker kill $(docker ps -q)'
 
 # === Vagrant === #
 alias vsa='vagrant suspend -a'
