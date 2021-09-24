@@ -6,7 +6,7 @@
 " === GitHub: sam-dt === "
 " ====================== "
 
-" === General === "
+" === General === {{{
 let mapleader = " "
 set number relativenumber
 
@@ -37,7 +37,10 @@ set scrolloff=1
 
 set nowrap
 
-" === Mappings === "
+set foldmethod=marker
+"}}}
+
+" === Mappings === {{{
 inoremap jj <Esc>
 
 nnoremap / /\v
@@ -58,6 +61,7 @@ nnoremap _ ddp
 nnoremap <Leader>wc :Copen<CR>
 
 vnoremap <Leader>p "_dP
+"}}}
 
 " === Autocommands === "
 
@@ -66,6 +70,7 @@ augroup numbertoggle
   autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
+" === Autocommands === {{{"
 
 augroup php
   autocmd!
@@ -88,8 +93,9 @@ augroup json
   autocmd!
   autocmd FileType json setlocal wrap
 augroup END
+"}}}
 
-" === Plugins === "
+" === Plugins === {{{"
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -146,8 +152,9 @@ call plug#begin()
 
   Plug 'jparise/vim-graphql'
 call plug#end()
+"}}}
 
-" === Theme === "
+" === Theme === {{{"
 " colorscheme dracula
 " colorscheme onedark
 colorscheme gruvbox
@@ -155,9 +162,11 @@ set background=dark
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"}}}
 
 " === CoC === "
 let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-yaml']
+" === CoC === {{{"
 set hidden
 set nobackup
 set nowritebackup
@@ -213,8 +222,9 @@ nmap <leader>ff  <Plug>(coc-fix-current)
 
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 nnoremap <leader>fi :OR<CR>
+"}}}
 
-" === Vim Fugitive === "
+" === Vim Fugitive === {{{"
 set diffopt+=vertical
 nnoremap <C-g> :Git<CR>
 nnoremap <Leader>gp :Git push<CR>
@@ -225,7 +235,7 @@ nnoremap <Leader>gc :Git commit -vsS<CR>
 nnoremap <Leader>gcn :Git commit -vsS -n<CR>
 nnoremap <Leader>gca :Git commit -vsS --amend<CR>
 
-" === Ale === "
+" === Ale === {{{"
 let g:ale_linters = {
 \   'sh': ['shellcheck']
 \}
@@ -235,12 +245,14 @@ let g:ale_fixers = {
 \}
 
 let g:ale_linters_explicit = 1
+"}}}
 
-" === Dispatch === "
+" === Dispatch === {{{"
 nnoremap <Leader>db :Dispatch! 
 nnoremap <Leader>df :Dispatch 
+"}}}
 
-" === Airline === "
+" === Airline === {{{"
 function! AirlineInit()
   let g:airline_section_y = 0
   let g:airline_section_z = 0
@@ -251,17 +263,21 @@ let airline#extensions#coc#error_symbol = ''
 let airline#extensions#coc#warning_symbol = ''
 let airline#extensions#coc#stl_format_err = ''
 let airline#extensions#coc#stl_format_warn = ''
+"}}}
 
-" === fzf === "
 nnoremap <C-s> :Rg<CR>
 nnoremap <C-p> :GFiles<CR>
 nnoremap <C-b> :Buffers<CR>
+" === fzf === {{{"
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+"}}}
 
 " === php-cs-fixer === "
+" === php-cs-fixer === {{{"
 let g:php_cs_fixer_path = "vendor/bin/php-cs-fixer"
+"}}}
 
-" === Angular CLI support === "
+" === Angular CLI support === {{{"
 autocmd VimEnter * if globpath('.','angular.json') != '' | call angular_cli#init() | endif
 
 nnoremap <Leader>at :ETemplate<CR>
@@ -270,6 +286,7 @@ nnoremap <Leader>ac :EComponent<CR>
 nnoremap <Leader>ap :ESpec<CR>
 
 let g:angular_cli_use_dispatch = 1
+"}}}
 
 " done
 echo "ಠ_ಠ"
