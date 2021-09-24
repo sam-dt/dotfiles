@@ -49,16 +49,14 @@ vnoremap / /\v
 nnoremap <Leader>ve :vsplit $MYVIMRC<CR>
 nnoremap <Leader>vr :source $MYVIMRC<CR>
 
-nnoremap <C-h> :noh<CR>
-nnoremap <C-x> :Explore<CR>
+nnoremap <Leader>h :noh<CR>
+nnoremap <Leader>x :Explore<CR>
 
-nnoremap <Leader>cp "*y
-vnoremap <Leader>cp "*y
+nnoremap <Leader>c "*y
+vnoremap <Leader>c "*y
 
 nnoremap - ddkP
 nnoremap _ ddp
-
-nnoremap <Leader>wc :Copen<CR>
 
 vnoremap <Leader>p "_dP
 "}}}
@@ -75,8 +73,8 @@ augroup END
 augroup php
   autocmd!
   autocmd FileType php setlocal shiftwidth=4 tabstop=4
-  autocmd FileType php nnoremap <Leader>ff :call PhpCsFixerFixFile()<CR>
-  autocmd FileType php nnoremap <C-f> :ALEFix<CR>
+  autocmd FileType php nnoremap <Leader>fc :call PhpCsFixerFixFile()<CR>
+  autocmd FileType php nnoremap <Leader>ff :ALEFix<CR>
   autocmd FileType php iabbrev pubfun public function
   autocmd FileType php iabbrev prifun private function
   autocmd FileType php iabbrev fincla final class
@@ -216,24 +214,26 @@ augroup cocvim
   autocmd!
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  autocmd FileType typescript,javascript,typescript.tsx,javascriptreact nnoremap <C-f> :CocCommand eslint.executeAutofix<CR>
+  autocmd FileType typescript,javascript,typescript.tsx,javascriptreact nnoremap <Leader>ff :CocCommand eslint.executeAutofix<CR>
 augroup end
-nmap <leader>ff  <Plug>(coc-fix-current)
-
-command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-nnoremap <leader>fi :OR<CR>
+nmap <leader>fc <Plug>(coc-fix-current)
 "}}}
 
 " === Vim Fugitive === {{{"
 set diffopt+=vertical
-nnoremap <C-g> :Git<CR>
+nnoremap <Leader>g<CR> :Git<CR>
 nnoremap <Leader>gp :Git push<CR>
-nnoremap <Leader>gpF :Git push --force-with-lease<CR>
+nnoremap <Leader>gP :Git push --force-with-lease<CR>
 nnoremap <Leader>gl :Git pull<CR>
-nnoremap <Leader>gg :Gclog!<CR>
-nnoremap <Leader>gc :Git commit -vsS<CR>
-nnoremap <Leader>gcn :Git commit -vsS -n<CR>
-nnoremap <Leader>gca :Git commit -vsS --amend<CR>
+nnoremap <Leader>gL :Git pull origin master --rebase<CR>
+nnoremap <Leader>gg :Git log --pretty='format:%Cgreen%h %Creset%s' origin/master..HEAD<CR>
+nnoremap <Leader>gc :Git commit -vsS
+nnoremap <Leader>gC :Git commit -vsSn
+nnoremap <Leader>gr :Git rebase -i
+nnoremap <Leader>g<Right> :Git rebase --continue
+nnoremap <Leader>gR :Git rebase -i master --autosquash<CR>
+nnoremap <Leader>gw :Gwrite<CR>
+"}}}
 
 " === Ale === {{{"
 let g:ale_linters = {
@@ -265,14 +265,13 @@ let airline#extensions#coc#stl_format_err = ''
 let airline#extensions#coc#stl_format_warn = ''
 "}}}
 
-nnoremap <C-s> :Rg<CR>
-nnoremap <C-p> :GFiles<CR>
-nnoremap <C-b> :Buffers<CR>
 " === fzf === {{{"
+nnoremap <Leader>s :Rg<CR>
+nnoremap <Leader>l :GFiles<CR>
+nnoremap <Leader>b :Buffers<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 "}}}
 
-" === php-cs-fixer === "
 " === php-cs-fixer === {{{"
 let g:php_cs_fixer_path = "vendor/bin/php-cs-fixer"
 "}}}
