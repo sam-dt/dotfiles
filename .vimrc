@@ -109,8 +109,8 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
   Plug 'stefandtw/quickfix-reflector.vim'
 
-  Plug 'dracula/vim', { 'as': 'dracula' }
-  Plug 'joshdick/onedark.vim'
+  " Plug 'dracula/vim', { 'as': 'dracula' }
+  " Plug 'joshdick/onedark.vim'
   Plug 'morhetz/gruvbox'
 
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -122,7 +122,7 @@ call plug#begin()
 
   Plug 'mattn/emmet-vim'
 
-  Plug 'dense-analysis/ale'
+  Plug 'dense-analysis/ale', { 'for': 'sh,csh,php' }
 
   Plug 'pearofducks/ansible-vim'
 
@@ -131,8 +131,6 @@ call plug#begin()
   Plug 'mustache/vim-mustache-handlebars'
 
   Plug 'othree/xml.vim'
-
-  Plug 'axvr/org.vim'
 
   Plug 'nelsyeung/twig.vim'
   Plug 'stephpy/vim-php-cs-fixer'
@@ -155,9 +153,8 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 "}}}
 
-" === CoC === "
-let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-yaml']
 " === CoC === {{{"
+let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-yaml']
 set hidden
 set nobackup
 set nowritebackup
