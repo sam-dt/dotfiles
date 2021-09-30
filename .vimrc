@@ -1,42 +1,23 @@
-" ====================== "
-" ===== vim config ===== "
-" ====================== "
-" = Author: Sam Dhondt = "
-" ====================== "
-" === GitHub: sam-dt === "
-" ====================== "
-
 " === General === {{{
 let mapleader = " "
 set number relativenumber
-
 set ignorecase
 set smartcase
-
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set autoindent
 set expandtab
 set smarttab
-
 set textwidth=72
-
 syntax on
-
 set gdefault
-
 set incsearch
 set hlsearch
-
 set showmatch
-
 set noswapfile
-
 set scrolloff=1
-
 set nowrap
-
 set foldmethod=marker
 "}}}
 
@@ -62,7 +43,6 @@ vnoremap <Leader>p "_dP
 "}}}
 
 " === Autocommands === {{{"
-
 augroup php
   autocmd!
   autocmd FileType php setlocal shiftwidth=4 tabstop=4
@@ -104,112 +84,36 @@ call plug#begin()
   Plug 'justinmk/vim-sneak'
   Plug 'jiangmiao/auto-pairs'
   Plug 'vim-airline/vim-airline'
-
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
+  Plug 'mattn/emmet-vim'
   Plug 'stefandtw/quickfix-reflector.vim'
 
-  " Plug 'dracula/vim', { 'as': 'dracula' }
-  " Plug 'joshdick/onedark.vim'
   Plug 'morhetz/gruvbox'
-
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
   Plug 'pangloss/vim-javascript'
   Plug 'HerringtonDarkholme/yats.vim'
   Plug 'maxmellon/vim-jsx-pretty'
   Plug 'ianks/vim-tsx'
-
-  Plug 'mattn/emmet-vim'
-
-  Plug 'dense-analysis/ale', { 'for': 'sh,csh,php' }
-
   Plug 'pearofducks/ansible-vim'
-
   Plug 'vimwiki/vimwiki'
-
   Plug 'mustache/vim-mustache-handlebars'
-
   Plug 'othree/xml.vim'
-
   Plug 'nelsyeung/twig.vim'
-  Plug 'stephpy/vim-php-cs-fixer'
-
+  Plug 'jparise/vim-graphql'
   Plug 'chr4/nginx.vim'
 
+  Plug 'nvim-lua/completion-nvim'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'dense-analysis/ale'
+  Plug 'stephpy/vim-php-cs-fixer'
   Plug 'bdauria/angular-cli.vim'
-
-  Plug 'jparise/vim-graphql'
 call plug#end()
 "}}}
 
 " === Theme === {{{"
-" colorscheme dracula
-" colorscheme onedark
 colorscheme gruvbox
 set background=dark
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"}}}
-
-" === CoC === {{{"
-let g:coc_global_extensions = ['coc-eslint', 'coc-tsserver', 'coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-yank', 'coc-yaml']
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
-set signcolumn=yes
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <silent><expr> <c-space> coc#refresh()
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>fs  <Plug>(coc-format-selected)
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-augroup cocvim
-  autocmd!
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  autocmd FileType typescript,javascript,typescript.tsx,javascriptreact nnoremap <Leader>ff :Prettier<CR>
-augroup end
-nmap <leader>fc <Plug>(coc-fix-current)
-
-
 "}}}
 
 " === Vim Fugitive === {{{"
@@ -257,14 +161,6 @@ let airline#extensions#coc#warning_symbol = ''
 let airline#extensions#coc#stl_format_err = ''
 let airline#extensions#coc#stl_format_warn = ''
 "}}}
-
-" === fzf === {{{"
-nnoremap <Leader>s :Rg<CR>
-nnoremap <Leader>l :GFiles<CR>
-nnoremap <Leader>b :Buffers<CR>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-"}}}
-
 " === php-cs-fixer === {{{"
 let g:php_cs_fixer_path = "vendor/bin/php-cs-fixer"
 "}}}
@@ -279,6 +175,71 @@ nnoremap <Leader>ap :ESpec<CR>
 
 let g:angular_cli_use_dispatch = 1
 "}}}
+
+" === LSP === {{{
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { 'tsserver' }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+EOF
+" }}}
+
+" === Completion === {{{
+autocmd BufEnter * lua require'completion'.on_attach()
+" Use <Tab> and <S-Tab> to navigate through popup menu
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+"map to manually trigger completion
+imap <silent> <C-space> <Plug>(completion_trigger)
+
+" }}}
 
 " done
 echo "ಠ_ಠ"
