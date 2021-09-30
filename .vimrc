@@ -1,23 +1,31 @@
-" === General === {{{
+" === Settings === {{{
+syntax on
 let mapleader = " "
+
 set number relativenumber
+
 set ignorecase
 set smartcase
+
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set autoindent
 set expandtab
 set smarttab
+
 set textwidth=72
-syntax on
+set nowrap
+
 set gdefault
 set incsearch
 set hlsearch
 set showmatch
+
 set noswapfile
+
 set scrolloff=1
-set nowrap
+
 set foldmethod=marker
 "}}}
 
@@ -33,8 +41,8 @@ nnoremap <Leader>vr :source $MYVIMRC<CR>
 nnoremap <Leader>h :noh<CR>
 nnoremap <Leader>x :Explore<CR>
 
-nnoremap <Leader>c "*y
-vnoremap <Leader>c "*y
+nnoremap <Leader>yc "*y
+vnoremap <Leader>yc "*y
 
 nnoremap - ddkP
 nnoremap _ ddp
@@ -49,11 +57,6 @@ nnoremap <Leader>bn :bn<CR>
 augroup php
   autocmd!
   autocmd FileType php setlocal shiftwidth=4 tabstop=4
-  autocmd FileType php nnoremap <Leader>fc :call PhpCsFixerFixFile()<CR>
-  autocmd FileType php nnoremap <Leader>ff :ALEFix<CR>
-  autocmd FileType php iabbrev pubfun public function
-  autocmd FileType php iabbrev prifun private function
-  autocmd FileType php iabbrev fincla final class
 augroup END
 
 augroup setfiletypes
@@ -91,10 +94,6 @@ call plug#begin()
   Plug 'stefandtw/quickfix-reflector.vim'
 
   Plug 'morhetz/gruvbox'
-  Plug 'pangloss/vim-javascript'
-  Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'maxmellon/vim-jsx-pretty'
-  Plug 'ianks/vim-tsx'
   Plug 'pearofducks/ansible-vim'
   Plug 'vimwiki/vimwiki'
   Plug 'mustache/vim-mustache-handlebars'
@@ -108,6 +107,7 @@ call plug#begin()
   Plug 'dense-analysis/ale'
   Plug 'stephpy/vim-php-cs-fixer'
   Plug 'bdauria/angular-cli.vim'
+  Plug 'SirVer/ultisnips'
 
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
@@ -115,15 +115,6 @@ call plug#begin()
   Plug 'nvim-telescope/telescope-fzy-native.nvim'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
-"}}}
-
-" === Theme === {{{"
-colorscheme gruvbox
-set background=dark
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"}}}
 
 " === Vim Fugitive === {{{"
 set diffopt+=vertical
@@ -147,7 +138,7 @@ let g:ale_linters = {
 \}
 
 let g:ale_fixers = {
-\   'php': ['prettier']
+\   'php': ['prettier'],
 \}
 
 let g:ale_linters_explicit = 1
@@ -164,11 +155,6 @@ function! AirlineInit()
   let g:airline_section_z = 0
 endfunction
 autocmd VimEnter * call AirlineInit()
-
-let airline#extensions#coc#error_symbol = ''
-let airline#extensions#coc#warning_symbol = ''
-let airline#extensions#coc#stl_format_err = ''
-let airline#extensions#coc#stl_format_warn = ''
 "}}}
 
 " === php-cs-fixer === {{{"
@@ -218,6 +204,11 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
+  -- settings for working next to efm
+  if client.config.flags then
+      client.config.flags.allow_incremental_sync = true
+  end
+  client.resolved_capabilities.document_formatting = false
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
@@ -230,6 +221,62 @@ for _, lsp in ipairs(servers) do
       debounce_text_changes = 150,
     }
   }
+
+local eslint = {
+  lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
+  lintStdin = true,
+  lintFormats = {"%f:%l:%c: %m"},
+  lintIgnoreExitCode = true,
+  formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}",
+  formatStdin = true
+}
+
+local function eslint_config_exists()
+  local eslintrc = vim.fn.glob(".eslintrc*", 0, 1)
+
+  if not vim.tbl_isempty(eslintrc) then
+    return true
+  end
+
+  if vim.fn.filereadable("package.json") then
+    if vim.fn.json_decode(vim.fn.readfile("package.json"))["eslintConfig"] then
+      return true
+    end
+  end
+
+  return false
+end
+
+require'lspconfig'.efm.setup {
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = true
+    client.resolved_capabilities.goto_definition = false
+  end,
+  root_dir = function()
+  if not eslint_config_exists() then
+    return nil
+  end
+  return vim.fn.getcwd()
+  end,
+  settings = {
+    languages = {
+      javascript = {eslint},
+      javascriptreact = {eslint},
+      ["javascript.jsx"] = {eslint},
+      typescript = {eslint},
+      ["typescript.tsx"] = {eslint},
+      typescriptreact = {eslint}
+      }
+  },
+  filetypes = {
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx",
+    "typescript",
+    "typescript.tsx",
+    "typescriptreact"
+  },
+}
 end
 EOF
 " }}}
@@ -256,7 +303,33 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+lua << EOF
+local actions = require('telescope.actions')
+require('telescope').setup {
+  defaults = {
+    mappings = {
+      n = {
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        ["<M-q>"] = actions.send_to_qflist + actions.open_qflist,
+      },
+      i = {
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+        ["<M-q>"] = actions.send_to_qflist + actions.open_qflist,
+      }
+    }
+  }
+}
+EOF
 " }}}
+
+" === Theme === {{{"
+colorscheme gruvbox
+set background=dark
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"}}}
 
 " done
 echo "ಠ_ಠ"
