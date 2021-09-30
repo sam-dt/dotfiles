@@ -40,6 +40,9 @@ nnoremap - ddkP
 nnoremap _ ddp
 
 vnoremap <Leader>p "_dP
+
+nnoremap <Leader>bp :bp<CR>
+nnoremap <Leader>bn :bn<CR>
 "}}}
 
 " === Autocommands === {{{"
@@ -105,6 +108,12 @@ call plug#begin()
   Plug 'dense-analysis/ale'
   Plug 'stephpy/vim-php-cs-fixer'
   Plug 'bdauria/angular-cli.vim'
+
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope-fzy-native.nvim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 "}}}
 
@@ -161,6 +170,7 @@ let airline#extensions#coc#warning_symbol = ''
 let airline#extensions#coc#stl_format_err = ''
 let airline#extensions#coc#stl_format_warn = ''
 "}}}
+
 " === php-cs-fixer === {{{"
 let g:php_cs_fixer_path = "vendor/bin/php-cs-fixer"
 "}}}
@@ -239,6 +249,13 @@ set shortmess+=c
 "map to manually trigger completion
 imap <silent> <C-space> <Plug>(completion_trigger)
 
+" }}}
+
+" === Telescope === {{{
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 " }}}
 
 " done
