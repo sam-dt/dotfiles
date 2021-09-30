@@ -200,13 +200,16 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>fs  <Plug>(coc-format-selected)
 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 augroup cocvim
   autocmd!
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-  autocmd FileType typescript,javascript,typescript.tsx,javascriptreact nnoremap <Leader>ff :CocCommand eslint.executeAutofix<CR>
+  autocmd FileType typescript,javascript,typescript.tsx,javascriptreact nnoremap <Leader>ff :Prettier<CR>
 augroup end
 nmap <leader>fc <Plug>(coc-fix-current)
+
+
 "}}}
 
 " === Vim Fugitive === {{{"
