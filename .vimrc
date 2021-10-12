@@ -109,11 +109,8 @@ call plug#begin()
   Plug 'bdauria/angular-cli.vim'
   Plug 'SirVer/ultisnips'
 
-  Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
-  Plug 'nvim-telescope/telescope-fzy-native.nvim'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " === Vim Fugitive === {{{"
@@ -298,29 +295,11 @@ imap <silent> <C-space> <Plug>(completion_trigger)
 
 " }}}
 
-" === Telescope === {{{
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-lua << EOF
-local actions = require('telescope.actions')
-require('telescope').setup {
-  defaults = {
-    mappings = {
-      n = {
-        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_to_qflist + actions.open_qflist,
-      },
-      i = {
-        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-        ["<M-q>"] = actions.send_to_qflist + actions.open_qflist,
-      }
-    }
-  }
-}
-EOF
+" === FZF === {{{
+nnoremap <Leader>fg :Rg<CR>
+nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>fb :Buffers<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 " }}}
 " === Treesitter === {{{
 lua << EOF
