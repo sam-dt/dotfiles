@@ -94,26 +94,25 @@ call plug#begin()
   Plug 'stefandtw/quickfix-reflector.vim'
 
   Plug 'morhetz/gruvbox'
-  Plug 'pearofducks/ansible-vim'
   Plug 'vimwiki/vimwiki'
   Plug 'mustache/vim-mustache-handlebars'
   Plug 'othree/xml.vim'
   Plug 'nelsyeung/twig.vim'
   Plug 'jparise/vim-graphql'
   Plug 'chr4/nginx.vim'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-  Plug 'nvim-lua/completion-nvim'
   Plug 'neovim/nvim-lspconfig'
   Plug 'dense-analysis/ale'
   Plug 'stephpy/vim-php-cs-fixer'
   Plug 'bdauria/angular-cli.vim'
-  Plug 'SirVer/ultisnips'
+
 
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
 call plug#end()
 
-" === Vim Fugitive === {{{"
+" === Git === {{{"
 set diffopt+=vertical
 nnoremap <Leader>g<CR> :Git<CR>
 nnoremap <Leader>gp :Git push<CR>
@@ -129,7 +128,7 @@ nnoremap <Leader>gR :Git rebase -i master --autosquash<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 "}}}
 
-" === Ale === {{{"
+" === Linter === {{{"
 let g:ale_linters = {
 \   'sh': ['shellcheck']
 \}
@@ -139,6 +138,8 @@ let g:ale_fixers = {
 \}
 
 let g:ale_linters_explicit = 1
+
+let g:php_cs_fixer_path = "vendor/bin/php-cs-fixer"
 "}}}
 
 " === Dispatch === {{{"
@@ -146,7 +147,7 @@ nnoremap <Leader>db :Dispatch!
 nnoremap <Leader>df :Dispatch 
 "}}}
 
-" === Airline === {{{"
+" === Statusline === {{{"
 function! AirlineInit()
   let g:airline_section_y = 0
   let g:airline_section_z = 0
@@ -154,22 +155,7 @@ endfunction
 autocmd VimEnter * call AirlineInit()
 "}}}
 
-" === php-cs-fixer === {{{"
-let g:php_cs_fixer_path = "vendor/bin/php-cs-fixer"
-"}}}
-
-" === Angular CLI support === {{{"
-autocmd VimEnter * if globpath('.','angular.json') != '' | call angular_cli#init() | endif
-
-nnoremap <Leader>at :ETemplate<CR>
-nnoremap <Leader>as :EStylesheet<CR>
-nnoremap <Leader>ac :EComponent<CR>
-nnoremap <Leader>ap :ESpec<CR>
-
-let g:angular_cli_use_dispatch = 1
-"}}}
-
-" === LSP === {{{
+" === Language support === {{{
 lua << EOF
 local nvim_lsp = require('lspconfig')
 
@@ -188,18 +174,18 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', '<Leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<Leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+  buf_set_keymap('n', '<Leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+  buf_set_keymap('n', '<Leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<Leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+  buf_set_keymap('n', '<Leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+  buf_set_keymap('n', '<Leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+  buf_set_keymap('n', '<Leader>cl', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
   -- settings for working next to efm
   if client.config.flags then
@@ -275,34 +261,7 @@ require'lspconfig'.efm.setup {
   },
 }
 end
-EOF
-" }}}
 
-" === Completion === {{{
-autocmd BufEnter * lua require'completion'.on_attach()
-" Use <Tab> and <S-Tab> to navigate through popup menu
-inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-set shortmess+=c
-
-"map to manually trigger completion
-imap <silent> <C-space> <Plug>(completion_trigger)
-
-" }}}
-
-" === FZF === {{{
-nnoremap <Leader>fg :Rg<CR>
-nnoremap <Leader>ff :GFiles<CR>
-nnoremap <Leader>fb :Buffers<CR>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
-" }}}
-" === Treesitter === {{{
-lua << EOF
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
@@ -326,7 +285,13 @@ local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 parser_config.tsx.used_by = { "javascript", "typescript.tsx" }
 EOF
 " }}}
-"}}}
+
+" === Search === {{{
+nnoremap <Leader>fg :Rg<CR>
+nnoremap <Leader>ff :GFiles<CR>
+nnoremap <Leader>fb :Buffers<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+" }}}
 
 " === Theme === {{{"
 colorscheme gruvbox
@@ -334,6 +299,17 @@ set background=dark
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+"}}}
+
+" === Misc === {{{"
+autocmd VimEnter * if globpath('.','angular.json') != '' | call angular_cli#init() | endif
+
+nnoremap <Leader>at :ETemplate<CR>
+nnoremap <Leader>as :EStylesheet<CR>
+nnoremap <Leader>ac :EComponent<CR>
+nnoremap <Leader>ap :ESpec<CR>
+
+let g:angular_cli_use_dispatch = 1
 "}}}
 
 " done
