@@ -124,9 +124,9 @@ nnoremap <Leader>gl :Git pull<CR>
 nnoremap <Leader>gL :Git pull origin master --rebase<CR>
 nnoremap <Leader>gg :Git log --pretty='format:%Cgreen%h %Creset%s' origin/master..HEAD<CR>
 nnoremap <Leader>gc :Git commit -vsS
-nnoremap <Leader>gC :Git commit -vsSn
+nnoremap <Leader>gC :Git commit -vsS --amend --no-edit<CR>
 nnoremap <Leader>gr :Git rebase -i
-nnoremap <Leader>g<Right> :Git rebase --continue
+nnoremap <Leader>g<Right> :Git rebase --continue<CR>
 nnoremap <Leader>gR :Git rebase -i master --autosquash<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 "}}}
