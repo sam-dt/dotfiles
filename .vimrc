@@ -127,7 +127,7 @@ nnoremap <Leader>gc :Git commit -vsS
 nnoremap <Leader>gC :Git commit -vsS --amend --no-edit<CR>
 nnoremap <Leader>gr :Git rebase -i
 nnoremap <Leader>g<Right> :Git rebase --continue<CR>
-nnoremap <Leader>gR :Git rebase -i master --autosquash<CR>
+nnoremap <Leader>gR :Git rebase origin/master --autosquash<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 "}}}
 
