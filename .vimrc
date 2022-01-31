@@ -87,6 +87,7 @@ call plug#begin()
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-vinegar'
+  Plug 'tpope/vim-unimpaired'
 
   Plug 'justinmk/vim-sneak'
   Plug 'jiangmiao/auto-pairs'
