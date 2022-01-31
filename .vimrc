@@ -122,6 +122,7 @@ nnoremap <Leader>gP :Git push --force-with-lease<CR>
 nnoremap <Leader>gl :Git pull<CR>
 nnoremap <Leader>gL :Git pull origin master --rebase<CR>
 nnoremap <Leader>gg :Git log --pretty='format:%Cgreen%h %Creset%s' origin/master..HEAD<CR>
+nnoremap <Leader>gG :Git log -p <C-r>%<CR>
 nnoremap <Leader>gc :Git commit -vsS
 nnoremap <Leader>gC :Git commit -vsS --amend --no-edit<CR>
 nnoremap <Leader>gr :Git rebase -i
