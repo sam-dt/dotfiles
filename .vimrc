@@ -27,8 +27,6 @@ set noswapfile
 set scrolloff=1
 
 set foldmethod=marker
-
-let g:netrw_liststyle = 3
 "}}}
 
 " === Mappings === {{{
