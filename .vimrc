@@ -248,6 +248,7 @@ nmap <leader>cl <Plug>(coc-fix-current)
 " === Search === {{{
 nnoremap <Leader>fg :Rg<CR>
 nnoremap <Leader>fw :Rg <C-r><C-w><CR>
+vnoremap <Leader>fw y :Rg <C-r>0<CR>
 nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fb :Buffers<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
