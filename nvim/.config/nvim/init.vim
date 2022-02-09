@@ -28,7 +28,7 @@ set scrolloff=1
 
 set foldmethod=marker
 
-set shell=/usr/local/bin/zsh
+set shell=/bin/zsh
 "}}}
 
 " === Mappings === {{{
