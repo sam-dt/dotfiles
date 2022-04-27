@@ -132,9 +132,9 @@ nnoremap <Leader>gg :Git log --pretty='format:%Cgreen%h %Creset%s' origin/master
 nnoremap <Leader>gG :Git log -p <C-r>%<CR>
 nnoremap <Leader>gc :Git commit -vsS
 nnoremap <Leader>gC :Git commit -vsS --amend --no-edit<CR>
-nnoremap <Leader>gr :Git rebase -i
+nnoremap <Leader>gr :Git rebase -i --autostash
 nnoremap <Leader>g<Right> :Git rebase --continue<CR>
-nnoremap <Leader>gR :Git rebase origin/master --autosquash<CR>
+nnoremap <Leader>gR :Git rebase origin/master --autosquash --autostash<CR>
 nnoremap <Leader>gw :Gwrite<CR>
 "}}}
 
