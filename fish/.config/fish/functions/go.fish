@@ -1,12 +1,17 @@
 function go
-  set --local branch (git branch |rg $argv |sed 's/ *//g')
-  set --local branchCount (echo "$branch" |wc -l |sed 's/ *//g')
-  switch $branchCount
-    case 0
-      echo "No matches found."
-    case 1
-      git checkout "$branch"
-    case '*'
-      echo "$branch"
+  set --local branch (git branch |rg $argv -S |tr -d ' ')
+  set --local branchCount (echo $branch |tr ' ' '\n' |wc -l |tr -d ' ')
+
+  if test $branchCount -gt 1
+    echo 'Multiple matches found: '
+    echo $branch |tr ' ' '\n'
+    return 0
   end
+
+  if test -z $branch
+    echo 'No matches found. Go fish!'
+    return 0
+  end
+
+  git checkout $branch
 end
