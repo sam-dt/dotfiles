@@ -140,11 +140,12 @@ nnoremap <Leader>gw :Gwrite<CR>
 
 " === Linter and formatter === {{{"
 let g:ale_linters = {
-\   'sh': ['shellcheck']
+\   'sh': ['shellcheck'],
+\   'php': ['php_cs_fixer'],
 \}
 
 let g:ale_fixers = {
-\   'php': ['prettier'],
+\   'php': ['prettier', 'php_cs_fixer'],
 \   'javascript': ['prettier'],
 \   'javascriptreact': ['prettier'],
 \   'typescript': ['prettier'],
