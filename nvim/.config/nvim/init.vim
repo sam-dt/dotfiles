@@ -27,8 +27,6 @@ set noswapfile
 set scrolloff=1
 
 set foldmethod=marker
-
-set shell=/bin/zsh
 "}}}
 
 " === Mappings === {{{
@@ -117,8 +115,9 @@ call plug#begin()
   Plug 'dense-analysis/ale'
   Plug 'stephpy/vim-php-cs-fixer'
   Plug 'bdauria/angular-cli.vim'
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
+
+  Plug 'BurntSushi/ripgrep'
+  Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " === Git === {{{"
@@ -356,12 +355,19 @@ end
 EOF
 
 " === Search === {{{
-nnoremap <Leader>fg :Rg<CR>
-nnoremap <Leader>fw :Rg <C-r><C-w><CR>
-vnoremap <Leader>fw y :Rg <C-r>0<CR>
-nnoremap <Leader>ff :GFiles<CR>
-nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <Leader>fw <cmd>Telescope grep_string<CR>
+nnoremap <Leader>ff <cmd>Telescope find_files<CR>
+nnoremap <Leader>fb <cmd>Telescope buffers<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
+
+lua << EOF
+require('telescope').setup {
+  defaults = {
+    path_display={"truncate"}
+  }
+}
+EOF
 " }}}
 
 " === Theme === {{{"
