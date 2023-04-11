@@ -357,6 +357,7 @@ nnoremap <Leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <Leader>fw <cmd>Telescope grep_string<CR>
 nnoremap <Leader>ff <cmd>Telescope find_files<CR>
 nnoremap <Leader>fb <cmd>Telescope buffers<CR>
+nnoremap <Leader>fr <cmd>Telescope resume<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*
 
 lua << EOF
