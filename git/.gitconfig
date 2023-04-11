@@ -20,6 +20,10 @@
 	tool = less
 [merge]
 	tool = nvim
+[pull]
+	ff = only
+[push]
+	default = current
 [difftool]
 	prompt = false
 [mergetool]
