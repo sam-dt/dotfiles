@@ -88,8 +88,8 @@ call plug#begin()
   Plug 'tpope/vim-unimpaired'
 
   Plug 'justinmk/vim-sneak'
-  Plug 'jiangmiao/auto-pairs'
-  Plug 'vim-airline/vim-airline'
+  Plug 'windwp/nvim-autopairs'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'mattn/emmet-vim'
   Plug 'stefandtw/quickfix-reflector.vim'
   Plug 'junegunn/vim-peekaboo'
@@ -170,20 +170,20 @@ nnoremap <Leader>df :Dispatch
 "}}}
 
 " === Statusline === {{{"
-function! AirlineInit()
-  let g:airline_section_y = 0
-  let g:airline_section_z = 0
-endfunction
-autocmd VimEnter * call AirlineInit()
+lua << EOF
+require('lualine').setup {
+  options = {
+    theme = 'gruvbox'
+  }
+}
+EOF
 
-let airline#extensions#coc#error_symbol = ''
-let airline#extensions#coc#warning_symbol = ''
-let airline#extensions#coc#stl_format_err = ''
-let airline#extensions#coc#stl_format_warn = ''
 "}}}
 
 " === Language support === {{{
 lua << EOF
+require'nvim-autopairs'.setup {}
+
 require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
