@@ -363,6 +363,11 @@ lua << EOF
 require('telescope').setup {
   defaults = {
     path_display={"truncate"}
+  },
+  pickers = {
+    find_files = {
+      hidden = true
+    }
   }
 }
 EOF
