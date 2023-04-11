@@ -29,6 +29,8 @@ set scrolloff=1
 set foldmethod=marker
 
 set shell=/bin/zsh
+
+set hidden
 "}}}
 
 " === Mappings === {{{
