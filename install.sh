@@ -30,8 +30,6 @@ brew install --HEAD neovim \ # nightly build
 # === Applications === #
 brew install --cask firefox \
   google-chrome \
-  gas-mask \
-  insomnia \
   rectangle
 
 # === Fonts === #
