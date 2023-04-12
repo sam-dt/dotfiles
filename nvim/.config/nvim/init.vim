@@ -55,6 +55,9 @@ vnoremap <Leader>p "_dP
 
 nnoremap <Leader>bp :bp<CR>
 nnoremap <Leader>bn :bn<CR>
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 "}}}
 
 " === Autocommands === {{{"
