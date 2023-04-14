@@ -89,6 +89,8 @@ call plug#begin()
   Plug 'tpope/vim-abolish'
   Plug 'tpope/vim-vinegar'
   Plug 'tpope/vim-unimpaired'
+  Plug 'tpope/vim-dadbod'
+  Plug 'tpope/vim-dotenv'
 
   Plug 'justinmk/vim-sneak'
   Plug 'windwp/nvim-autopairs'
