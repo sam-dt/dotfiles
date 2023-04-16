@@ -24,7 +24,9 @@ brew install fish \
   docker \
   shellcheck \
   stow \
-  tmux
+  tmux \
+  yabai \
+  skhd
 
 brew install --HEAD neovim \ # nightly build
 
