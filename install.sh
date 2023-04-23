@@ -26,7 +26,8 @@ brew install fish \
   stow \
   tmux \
   yabai \
-  skhd
+  skhd \
+  universal-ctags
 
 brew install --HEAD neovim \ # nightly build
 
