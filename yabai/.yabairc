@@ -33,4 +33,4 @@ yabai -m rule --add app="^Teams$" space=mail
 yabai -m rule --add app="^Messages$" space=mail
 
 # make specific app windows float
-yabai -m rule --add app="^System Preferences$" manage=off grid=4:4:1:0:2:2
+yabai -m rule --add app="^System (Preferences|Settings)$" manage=off grid=4:4:1:0:2:2
