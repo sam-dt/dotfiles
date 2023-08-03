@@ -11,6 +11,7 @@
 [alias]
 	co = checkout
 	ci = commit
+  cs = commit -vsS 
 	st = status
 	br = branch
   rb = rebase
@@ -34,6 +35,13 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[pull]
+	ff = only
+	rebase = true
+[rebase]
+	autoStash = true
+[gpg]
+	program = gpg
 [pull]
 	ff = only
 	rebase = true
