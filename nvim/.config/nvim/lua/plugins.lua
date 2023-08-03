@@ -12,12 +12,12 @@ return require('packer').startup(function(use)
   use 'tpope/vim-dotenv'
 
   use 'justinmk/vim-sneak'
-
+ 
   use 'windwp/nvim-autopairs'
 
   use 'mattn/emmet-vim'
 
-  -- use 'stefandtw/quickfix-reflector.vim'
+  use 'stefandtw/quickfix-reflector.vim'
 
   use 'morhetz/gruvbox'
 
