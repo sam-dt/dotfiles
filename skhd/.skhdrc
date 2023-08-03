@@ -14,3 +14,6 @@ alt - d : yabai -m space --destroy
 
 # zoom
 alt - z : yabai -m window --toggle zoom-fullscreen
+
+# rotate
+alt - r : yabai -m space --rotate 90
