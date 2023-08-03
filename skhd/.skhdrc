@@ -13,4 +13,4 @@ alt - 3 : yabai -m space --focus mail
 alt - d : yabai -m space --destroy
 
 # zoom
-alt - z : yabai -m window --toggle zoom-parent
+alt - z : yabai -m window --toggle zoom-fullscreen
