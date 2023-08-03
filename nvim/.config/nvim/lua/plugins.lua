@@ -2,6 +2,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-dispatch'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
+  use 'radenling/vim-dispatch-neovim'
   use 'tpope/vim-repeat'
   use 'tpope/vim-commentary'
   use 'tpope/vim-abolish'
