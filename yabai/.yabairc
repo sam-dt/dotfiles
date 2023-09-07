@@ -25,7 +25,7 @@ yabai -m space 2 --label browser
 yabai -m space 3 --label mail
 
 # assign specific apps to specific spaces
-yabai -m rule --add app="^Terminal$" space=term
+yabai -m rule --add app="^iTerm2$" space=term
 yabai -m rule --add app="^Firefox$" space=browser
 yabai -m rule --add app="^Mail$" space=mail
 yabai -m rule --add app="^Slack$" space=mail
