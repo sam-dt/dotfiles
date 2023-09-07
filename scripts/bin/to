@@ -1,0 +1,19 @@
+#!/opt/homebrew/bin/zsh
+
+# based on https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+
+dir=$(find ~/codifly ~ ~/napoleongames ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
+
+session_name=$(basename "$dir" | tr . _)
+tmux_running=$(pgrep tmux)
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $session_name -c $dir
+    exit 0
+fi
+
+if ! tmux has-session -t=$session_name 2> /dev/null; then
+    tmux new-session -ds $session_name -c $dir
+fi
+
+tmux switch-client -t $session_name
