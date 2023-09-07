@@ -1,4 +1,6 @@
 return require('packer').startup(function(use)
+  use 'wbthomason/packer.nvim'
+
   use 'tpope/vim-dispatch'
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
