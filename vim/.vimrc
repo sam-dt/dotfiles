@@ -73,5 +73,5 @@ call plug#begin()
 call plug#end()
 
 colorscheme retrobox
-
+set background=light
 
