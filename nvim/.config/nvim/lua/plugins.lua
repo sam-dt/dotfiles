@@ -21,7 +21,7 @@ return require('packer').startup(function(use)
 
   use 'stefandtw/quickfix-reflector.vim'
 
-  use 'morhetz/gruvbox'
+  use 'ellisonleao/gruvbox.nvim'
 
   use 'jparise/vim-graphql'
   use 'leafgarland/typescript-vim'
