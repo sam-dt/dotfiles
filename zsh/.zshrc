@@ -24,3 +24,8 @@ bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
 
 bindkey '^F' autosuggest-accept
+
+autoload edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
