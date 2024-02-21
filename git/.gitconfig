@@ -17,6 +17,9 @@
   rb = rebase
   pl = pull
   ps = push
+[commit]
+  verbose = true
+  gpgsign = true
 [diff]
 	tool = less
 [merge]
