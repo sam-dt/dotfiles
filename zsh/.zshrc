@@ -20,7 +20,7 @@ zstyle ':completion:*' menu select
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # keymaps
-bindkey '^P' history-beginning-search-backward
-bindkey '^N' history-beginning-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
 
 bindkey '^F' autosuggest-accept
