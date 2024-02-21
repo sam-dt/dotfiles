@@ -12,6 +12,10 @@ return require('packer').startup(function(use)
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-dadbod'
   use 'tpope/vim-dotenv'
+  use 'tpope/vim-eunuch'
+  use 'tpope/vim-projectionist'
+
+  use 'vim-test/vim-test'
 
   use 'justinmk/vim-sneak'
  
