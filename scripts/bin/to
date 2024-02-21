@@ -4,16 +4,15 @@
 
 dir=$(find ~/codifly ~ ~/napoleongames ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
 
-session_name=$(basename "$dir" | tr . _)
-tmux_running=$(pgrep tmux)
+session_name=$(basename "$dir")
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $session_name -c $dir
+if [[ -z $TMUX ]]; then
+    tmux new-session -A -s "$session_name" -c "$dir" nvim -c 'Telescope find_files'
     exit 0
 fi
 
-if ! tmux has-session -t=$session_name 2> /dev/null; then
-    tmux new-session -ds $session_name -c $dir
+if ! tmux has-session -t="$session_name" 2> /dev/null; then
+    tmux new-session -ds "$session_name" -c "$dir" nvim -c 'Telescope find_files'
 fi
 
-tmux switch-client -t $session_name
+tmux switch-client -t "$session_name"
