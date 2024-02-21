@@ -52,7 +52,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-(require 'key-chord)
-(key-chord-mode 1)
-(key-chord-define evil-insert-state-map  "jj" 'evil-normal-state)
