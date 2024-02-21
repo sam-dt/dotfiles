@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
 
   use 'jparise/vim-graphql'
   use 'leafgarland/typescript-vim'
-  use 'dag/vim-fish'
 
   use 'f-person/auto-dark-mode.nvim'
 
