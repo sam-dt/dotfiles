@@ -60,6 +60,7 @@ call plug#begin()
   Plug 'tpope/vim-unimpaired'
   Plug 'tpope/vim-dadbod'
   Plug 'tpope/vim-dotenv'
+  Plug 'tpope/vim-eunuch'
 
   Plug 'justinmk/vim-sneak'
 
@@ -70,6 +71,10 @@ call plug#begin()
   Plug 'ludovicchabant/vim-gutentags'
 
   Plug 'vim/colorschemes'
+
+  Plug 'mattn/emmet-vim'
+
+  Plug 'vimwiki/vimwiki'
 call plug#end()
 
 colorscheme retrobox
