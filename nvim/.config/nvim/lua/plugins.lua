@@ -13,12 +13,9 @@ return require('packer').startup(function(use)
   use 'tpope/vim-dadbod'
   use 'tpope/vim-dotenv'
   use 'tpope/vim-eunuch'
-  use 'tpope/vim-projectionist'
 
-  use 'vim-test/vim-test'
   use 'ggandor/leap.nvim'
 
- 
   use 'windwp/nvim-autopairs'
 
   use 'mattn/emmet-vim'
