@@ -16,7 +16,7 @@ autocmd FileType vim setlocal keywordprg=:help
 set path+=**
 
 set wildmenu
-set wildignore=*/node_modules/*,*/tmp/*
+set wildignore=*/node_modules/*,*/tmp/*,*/dist/*,*/build/*
 set wildoptions=pum
 set wildmode=full
 
