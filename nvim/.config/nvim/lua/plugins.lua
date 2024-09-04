@@ -26,6 +26,10 @@ return require('packer').startup(function(use)
 
   use 'jparise/vim-graphql'
   use 'leafgarland/typescript-vim'
+  use 'bfrg/vim-jq'
+  use 'towolf/vim-helm'
+  use 'luckasRanarison/tailwind-tools.nvim'
+  use 'b0o/schemastore.nvim'
 
   use 'f-person/auto-dark-mode.nvim'
 
@@ -83,7 +87,4 @@ return require('packer').startup(function(use)
       require("supermaven-nvim").setup({})
     end,
   }
-
-
-  use 'bfrg/vim-jq'
 end)
