@@ -16,8 +16,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-projectionist'
 
   use 'vim-test/vim-test'
+  use 'ggandor/leap.nvim'
 
-  use 'justinmk/vim-sneak'
  
   use 'windwp/nvim-autopairs'
 
