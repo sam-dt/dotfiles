@@ -28,14 +28,6 @@
 	default = current
 [difftool]
 	prompt = false
-[mergetool]
-	path = nvim
-	keepBackup = false
-[filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
 [pull]
 	rebase = true
 [rebase]
