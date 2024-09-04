@@ -38,8 +38,3 @@
   follow = true
 [gpg]
 	program = gpg
-[pull]
-	ff = only
-	rebase = true
-[rebase]
-	autoStash = true
