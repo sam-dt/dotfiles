@@ -1,6 +1,7 @@
 [user]
 	name = Sam Dhondt
 	email = sam.dhondt@codifly.be
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIONo9UvBVRI/nP0j+ey+hTzepWaPiRU7zfo4cBjCW+Be
 [core]
 	excludesfile = /Users/sam/.gitignore_global
 	ignorecase = false
@@ -37,4 +38,7 @@
 [log]
   follow = true
 [gpg]
-	program = gpg
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+  allowedSignersFile = "~/.ssh/allowed_signers"
