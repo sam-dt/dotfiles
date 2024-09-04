@@ -16,6 +16,8 @@ autoload -U compinit; compinit
 zstyle ':completion:*' menu select
 
 # autocomplete and autosuggestions
+autoload -Uz compinit
+compinit
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -29,3 +31,6 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
