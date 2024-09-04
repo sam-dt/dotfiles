@@ -40,6 +40,10 @@
 	rebase = true
 [rebase]
 	autoStash = true
+[rerere]
+  enabled = true
+[log]
+  follow = true
 [gpg]
 	program = gpg
 [pull]
