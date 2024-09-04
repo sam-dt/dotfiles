@@ -80,8 +80,13 @@ return require('packer').startup(function(use)
   }
 
   use 'kana/vim-textobj-user'
+  use {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
+  }
 
-  use 'github/copilot.vim'
 
   use 'bfrg/vim-jq'
 end)
