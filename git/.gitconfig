@@ -33,6 +33,7 @@
 	rebase = true
 [rebase]
 	autoStash = true
+	autoSquash = true
 [rerere]
   enabled = true
 [log]
