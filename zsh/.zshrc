@@ -10,11 +10,6 @@ zstyle ':vcs_info:git:*' formats '%b'
 
 alias ll='ls -l'
 
-# z plugin for jumping to dirs
-source /opt/zsh-z/zsh-z.plugin.zsh
-autoload -U compinit; compinit
-zstyle ':completion:*' menu select
-
 # autocomplete and autosuggestions
 autoload -Uz compinit
 compinit
