@@ -7,6 +7,9 @@
 	ignorecase = false
 	editor = nvim
   pager = less
+[mergetool]
+	path = nvim
+	keepBackup = false
 [mergetool "nvim"]
   cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 [alias]
