@@ -30,3 +30,5 @@ source /Users/sam/.config/op/plugins.sh
 
 zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
+eval "$(/Users/sam/.local/bin/mise activate zsh)"
