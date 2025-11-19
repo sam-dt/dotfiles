@@ -26,3 +26,5 @@ vim.opt.swapfile = false
 vim.opt.hidden = true
 
 vim.g.wildignore = { 'tmp','*.so','*.swp','*.zip','node_modules' }
+
+vim.opt.scrolloff = 5

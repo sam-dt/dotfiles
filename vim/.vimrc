@@ -38,6 +38,8 @@ set hlsearch
 
 set showmatch
 
+set scrolloff=5
+
 nnoremap / /\v
 vnoremap / /\v
 
