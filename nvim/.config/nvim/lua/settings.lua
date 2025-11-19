@@ -28,3 +28,5 @@ vim.opt.hidden = true
 vim.g.wildignore = { 'tmp','*.so','*.swp','*.zip','node_modules' }
 
 vim.opt.scrolloff = 5
+
+vim.g.loaded_matchparen=1
