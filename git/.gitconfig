@@ -21,26 +21,46 @@
   rb = rebase
   pl = pull
   ps = push
+[branch]
+  sort = committerdate
 [commit]
   verbose = true
   gpgsign = true
+[column]
+  ui = auto
 [diff]
 	tool = less
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
 [merge]
 	tool = nvim
 [push]
-	default = current
+  autoSetupRemote = true
+  default = current
 [difftool]
 	prompt = false
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[help]
+  autocorrect = prompt
 [pull]
 	rebase = true
 [rebase]
 	autoStash = true
 	autoSquash = true
+  updateRefs = true
+	instructionFormat = (%an <%ae>) %s
 [rerere]
   enabled = true
+  autoupdate = true
 [log]
   follow = true
+[tag]
+  sort = version:refname
 [gpg]
   format = ssh
 [gpg "ssh"]
