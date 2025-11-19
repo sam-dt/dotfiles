@@ -48,26 +48,12 @@ return require('packer').startup(function(use)
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    requires = {
-      {'neovim/nvim-lspconfig'},
-      {                        
-        'williamboman/mason.nvim',
-        run = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      {'williamboman/mason-lspconfig.nvim'},
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'L3MON4D3/LuaSnip'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-path'},
-      {'hrsh7th/cmp-cmdline'},
-      {'hrsh7th/nvim-cmp'},
-      {'jose-elias-alvarez/nvim-lsp-ts-utils'},
-    }
+    'neovim/nvim-lspconfig',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-cmdline',
+    'hrsh7th/nvim-cmp'
   }
 
   use {
@@ -98,4 +84,5 @@ return require('packer').startup(function(use)
       require("supermaven-nvim").setup({})
     end,
   }
+  -- use { 'echasnovski/mini.completion', version = false }
 end)
