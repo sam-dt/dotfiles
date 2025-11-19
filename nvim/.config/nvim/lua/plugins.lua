@@ -1,3 +1,6 @@
+-- need to define this before loading the plugin
+vim.g.user_emmet_leader_key = '<C-z>'
+
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
