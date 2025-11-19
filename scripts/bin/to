@@ -2,17 +2,17 @@
 
 # based on https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
 
-dir=$(find ~/codifly ~ ~/napoleongames ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
+dir=$(find ~ ~/Projects -mindepth 1 -maxdepth 1 -type d | fzf)
 
 session_name=$(basename "$dir")
 
 if [[ -z $TMUX ]]; then
-    tmux new-session -A -s "$session_name" -c "$dir" nvim -c 'Telescope find_files'
+    tmux new-session -A -s "$session_name" -c "$dir"
     exit 0
 fi
 
 if ! tmux has-session -t="$session_name" 2> /dev/null; then
-    tmux new-session -ds "$session_name" -c "$dir" nvim -c 'Telescope find_files'
+    tmux new-session -ds "$session_name" -c "$dir"
 fi
 
 tmux switch-client -t "$session_name"
