@@ -57,15 +57,6 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'dense-analysis/ale',
-    requires = {
-      { 'stephpy/vim-php-cs-fixer'}
-    }
-  }
-
-  use 'bdauria/angular-cli.vim'
-
-  use {
     'nvim-telescope/telescope.nvim',
     requires = {
       {'BurntSushi/ripgrep'},
