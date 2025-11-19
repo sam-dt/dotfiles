@@ -22,14 +22,19 @@ yabai -m space --create 3
 yabai -m space 1 --label term
 yabai -m space 2 --label browser
 yabai -m space 3 --label mail
+yabai -m space 4 --label play
 
 # assign specific apps to specific spaces
 yabai -m rule --add app="^iTerm2$" space=term
 yabai -m rule --add app="^Firefox$" space=browser
+yabai -m rule --add app="^Chrome$" space=browser
+yabai -m rule --add app="^Chromium$" space=browser
 yabai -m rule --add app="^Mail$" space=mail
+yabai -m rule --add app="^Calendar$" space=mail
 yabai -m rule --add app="^Slack$" space=mail
-yabai -m rule --add app="^Teams$" space=mail
+yabai -m rule --add app="Teams" space=mail
 yabai -m rule --add app="^Messages$" space=mail
+yabai -m rule --add app="^Spotify$" space=play
 
 # make specific app windows float
 yabai -m rule --add app="^System (Preferences|Settings)$" manage=off grid=4:4:1:0:2:2
