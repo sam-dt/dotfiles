@@ -31,10 +31,19 @@ return require('packer').startup(function(use)
   use 'leafgarland/typescript-vim'
   use 'bfrg/vim-jq'
   use 'towolf/vim-helm'
-  use 'luckasRanarison/tailwind-tools.nvim'
   use 'b0o/schemastore.nvim'
 
   use 'f-person/auto-dark-mode.nvim'
+
+  use {
+    'luckasRanarison/tailwind-tools.nvim',
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- optional
+      "neovim/nvim-lspconfig", -- optional
+    },
+    run = ':UpdateRemotePlugins'
+  }
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
