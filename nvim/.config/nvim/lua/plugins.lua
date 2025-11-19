@@ -36,13 +36,9 @@ return require('packer').startup(function(use)
   use 'f-person/auto-dark-mode.nvim'
 
   use {
-    'luckasRanarison/tailwind-tools.nvim',
-    requires = {
-      "nvim-treesitter/nvim-treesitter",
-      "nvim-telescope/telescope.nvim", -- optional
-      "neovim/nvim-lspconfig", -- optional
-    },
-    run = ':UpdateRemotePlugins'
+  'razak17/tailwind-fold.nvim',
+  requires = { 'nvim-treesitter/nvim-treesitter' },
+  ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
   }
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
