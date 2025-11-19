@@ -8,3 +8,6 @@ vim.keymap.set('n', 'N', 'Nzz')
 
 vim.keymap.set('c', '<C-f>', '<Down>')
 vim.keymap.set('c', '<C-b>', '<Up>')
+
+vim.keymap.set({'n', 'x', 'o'}, 's', '<Plug>(leap)')
+vim.keymap.set('n',             'S', '<Plug>(leap-from-window)')
