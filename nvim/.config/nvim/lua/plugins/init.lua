@@ -41,8 +41,9 @@ return {
 
   {
     'razak17/tailwind-fold.nvim',
+    opts = {},
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    ft = { 'html', 'typescriptreact' },
+    ft = { 'html', 'svelte', 'astro', 'vue', 'typescriptreact', 'php', 'blade' },
   },
 
   { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
@@ -53,6 +54,7 @@ return {
     dependencies = {
       'BurntSushi/ripgrep',
       'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons'
     }
   },
 
@@ -68,7 +70,7 @@ return {
       sections = {
         lualine_a = { "branch" },
         lualine_b = {},
-        lualine_x = {},
+        lualine_x = { "diagnostics" },
         lualine_y = {
           { "progress", separator = " ", padding = { left = 1, right = 0 } },
           { "location", padding = { left = 0, right = 1 } },
