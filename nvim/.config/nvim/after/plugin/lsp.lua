@@ -56,6 +56,10 @@ vim.lsp.config('tailwindcss', {
   capabilities = capabilities
 })
 
+vim.lsp.config('ctags_lsp', {
+  capabilities = capabilities,
+})
+
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
