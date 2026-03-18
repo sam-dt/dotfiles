@@ -12,7 +12,7 @@ return {
   'tpope/vim-dotenv',
   'tpope/vim-eunuch',
 
-  'ggandor/leap.nvim',
+  'https://codeberg.org/andyg/leap.nvim',
 
   'windwp/nvim-autopairs',
 
