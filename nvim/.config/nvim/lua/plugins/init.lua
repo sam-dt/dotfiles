@@ -39,6 +39,8 @@ return {
   'hrsh7th/cmp-vsnip',
   'hrsh7th/vim-vsnip',
   'netmute/ctags-lsp.nvim',
+  
+  'github/copilot.vim',
 
   {
     'razak17/tailwind-fold.nvim',
@@ -83,13 +85,6 @@ return {
   },
 
   {
-    "supermaven-inc/supermaven-nvim",
-    config = function()
-      require("supermaven-nvim").setup({})
-    end,
-  },
-
-  {
     'pwntester/octo.nvim',
     requires = {
       'nvim-lua/plenary.nvim',
@@ -99,6 +94,16 @@ return {
     config = function ()
       require"octo".setup()
     end
+  },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
+    },
+    build = "make tiktoken",
+    opts = {
+      -- See Configuration section for options
+    },
   }
 }
 
