@@ -53,6 +53,8 @@ vim.g.loaded_matchparen=1
 
 vim.g.user_emmet_leader_key = '<C-z>'
 
+vim.g['test#strategy'] = "dispatch"
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {

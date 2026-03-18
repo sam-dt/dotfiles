@@ -12,6 +12,8 @@ return {
   'tpope/vim-dotenv',
   'tpope/vim-eunuch',
 
+  'vim-test/vim-test',
+
   'https://codeberg.org/andyg/leap.nvim',
 
   'windwp/nvim-autopairs',
