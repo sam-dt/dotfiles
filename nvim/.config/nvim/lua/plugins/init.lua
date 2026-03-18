@@ -95,6 +95,11 @@ return {
       require"octo".setup()
     end
   },
+
+  {
+    "mason-org/mason.nvim",
+    opts = {}
+  },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = {
