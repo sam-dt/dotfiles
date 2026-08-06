@@ -3,6 +3,9 @@ vim.lsp.enable('ts_ls')
 vim.lsp.enable('intelephense')
 vim.lsp.enable('eslint')
 vim.lsp.enable('jsonls')
+vim.lsp.enable('oxlint')
+vim.lsp.enable('prisma')
+vim.lsp.enable('yamllint')
 
 local cmp = require'cmp'
 
@@ -58,6 +61,14 @@ vim.lsp.config('tailwindcss', {
 
 vim.lsp.config('ctags_lsp', {
   capabilities = capabilities,
+})
+
+vim.lsp.config('prisma', {
+  capabilities = capabilities
+})
+
+vim.lsp.config('yamllint', {
+  capabilities = capabilities
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
