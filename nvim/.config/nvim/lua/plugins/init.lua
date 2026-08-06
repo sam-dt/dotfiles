@@ -12,8 +12,6 @@ return {
   'tpope/vim-dotenv',
   'tpope/vim-eunuch',
 
-  'vim-test/vim-test',
-
   'https://codeberg.org/andyg/leap.nvim',
 
   'windwp/nvim-autopairs',
@@ -42,8 +40,6 @@ return {
   'hrsh7th/vim-vsnip',
   'netmute/ctags-lsp.nvim',
   
-  'github/copilot.vim',
-
   {
     'razak17/tailwind-fold.nvim',
     opts = {},
@@ -87,30 +83,8 @@ return {
   },
 
   {
-    'pwntester/octo.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
-    config = function ()
-      require"octo".setup()
-    end
-  },
-
-  {
     "mason-org/mason.nvim",
     opts = {}
-  },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    dependencies = {
-      { "nvim-lua/plenary.nvim", branch = "master" },
-    },
-    build = "make tiktoken",
-    opts = {
-      -- See Configuration section for options
-    },
   }
 }
 
