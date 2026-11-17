@@ -1,0 +1,7 @@
+font-size = 20
+
+theme = light:Gruvbox Light,dark:Gruvbox Dark
+
+window-decoration = false
+
+macos-titlebar-style = hidden
