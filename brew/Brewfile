@@ -1,7 +1,6 @@
 tap "anomalyco/tap"
 tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "atlassian/acli"
-tap "d12frosted/emacs-plus"
 tap "felixkratz/formulae"
 tap "fluxcd/tap"
 tap "hashicorp/tap"
@@ -11,31 +10,21 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "ktr0731/evans"
 tap "morantron/tmux-fingers"
-tap "netbirdio/tap"
 tap "netmute/tap"
 tap "oven-sh/bun"
 tap "passbolt/tap"
-tap "quarkusio/tap"
-tap "railwaycat/emacsmacport"
-tap "shivammathur/php", trusted: true
 # Static checker for GitHub Actions workflow files
 brew "actionlint"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
 # Companion library to apr, the Apache Portable Runtime library
 brew "apr-util"
-# Extendable version manager with support for Ruby, Node.js, Erlang & more
-brew "asdf"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Bash Automated Testing System
 brew "bats-core"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# Package manager for the web
-brew "bower"
 # Software library to render fonts
 brew "freetype"
 # XML-based font configuration API for X Windows
@@ -56,38 +45,20 @@ brew "jpeg-xl"
 brew "libavif"
 # Graphics library to dynamically manipulate images
 brew "gd"
-# Dependency Manager for PHP
-brew "composer"
 # Apjanke's fork of the classic cowsay project
 brew "cowsay"
-# Reimplementation of ctags(1)
-brew "ctags", link: false
-# Maintained ctags implementation
-brew "universal-ctags"
-# LSP implementation using universal-ctags as backend
-brew "ctags-lsp"
-# Secure runtime for JavaScript and TypeScript
-brew "deno"
 # Display user-friendly message boxes from shell scripts
 brew "dialog"
 # Tool for exploring each layer in a docker image
 brew "dive"
 # Bash, Zsh and Fish completion for Docker
 brew "docker-completion"
-# Command-line tool to interact with exercism.io
-brew "exercism"
-# Simple, fast and user-friendly alternative to find
-brew "fd"
 # Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
-# Fast and simple Node.js version manager
-brew "fnm"
 # Infamous electronic fortune-cookie generator
 brew "fortune"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# GNU awk utility
-brew "gawk"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -118,16 +89,10 @@ brew "grpcurl"
 brew "harfbuzz"
 # Kubernetes package manager
 brew "helm"
-# Improved top (interactive process viewer)
-brew "htop"
 # Apache HTTP server
 brew "httpd"
-# Java language specific implementation of the Language Server Protocol
-brew "jdtls"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Kubernetes CLI To Manage Your Clusters In Style!
-brew "k9s"
 # OpenID Connect authentication plugin for kubectl
 brew "kubelogin"
 # Kubernetes command-line interface
@@ -136,8 +101,6 @@ brew "kubernetes-cli"
 brew "libfido2"
 # Library to render SVG files using Cairo
 brew "librsvg"
-# Drop-in replacement for MySQL
-brew "mariadb", link: false
 # Simple tool to make locally trusted development certificates
 brew "mkcert"
 # Project documentation with Markdown
@@ -154,8 +117,6 @@ brew "neovim"
 brew "nss"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
-# Tool to automatically fix PHP coding standards issues
-brew "php-cs-fixer"
 # Pinentry for GPG on Mac
 brew "pinentry-mac"
 # Execute binaries from Python packages in isolated environments
@@ -164,10 +125,6 @@ brew "pipx"
 brew "postgresql@14"
 # Python version management
 brew "pyenv"
-# C AMQP client library for RabbitMQ
-brew "rabbitmq-c"
-# Persistent key-value database, with built-in net interface
-brew "redis"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Tool for downloading RTMP streaming media
@@ -180,14 +137,10 @@ brew "shellcheck"
 brew "sl"
 # SOcket CAT: netcat on steroids
 brew "socat"
-# Editor of encrypted files
-brew "sops"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Feature-rich console based todo list manager
 brew "task"
-# Terraform version manager inspired by rbenv
-brew "tfenv"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -196,20 +149,18 @@ brew "tree"
 brew "wget"
 # Linter for YAML files
 brew "yamllint"
+# Process YAML, JSON, XML, CSV and properties documents from the CLI
+brew "yq"
 # UNIX shell (command interpreter)
 brew "zsh"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
-# The AI coding agent built for the terminal.
-brew "anomalyco/tap/opencode", trusted: true
 # Command-line interface for 1Password
 cask "1password-cli"
-# Web browser focusing on privacy
-cask "brave-browser"
 # Terminal-based AI coding assistant
 cask "claude-code"
-# Brings the power of Copilot coding agent directly to your terminal
-cask "copilot-cli"
+# Free app that makes your Internet safer
+cask "cloudflare-warp"
 # App to build and share containerised applications and microservices
 cask "docker-desktop"
 # Web browser
@@ -220,24 +171,12 @@ cask "font-hack-nerd-font"
 cask "ghostty"
 # Web browser
 cask "google-chrome"
-# HTTP and GraphQL Client
-cask "insomnia"
-# IDE for Java development - community edition
-cask "intellij-idea-ce"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2@beta"
 # Open-source screen recorder built with web technology
 cask "kap"
-# Host-based application firewall
-cask "little-snitch"
 # Open-source firewall to block unknown outgoing connections
 cask "lulu"
 # Clipboard manager
 cask "maccy"
-# Provides updates to various Microsoft products
-cask "microsoft-auto-update"
-# Email client
-cask "microsoft-outlook"
 # Meet, chat, call, and collaborate in just one place
 cask "microsoft-teams"
 # Reverse proxy, secure introspectable tunnels to localhost
@@ -250,12 +189,6 @@ cask "raycast"
 cask "rectangle"
 # Team communication and collaboration software
 cask "slack"
-# Pomodoro timer for Taskwarrior
-cask "taskwarrior-pomodoro"
-# Menu bar pomodoro timer
-cask "tomatobar"
-# Free and open-source OpenVPN client
-cask "tunnelblick"
 # Open-source code editor
 cask "visual-studio-code"
 vscode "dbaeumer.vscode-eslint"
@@ -267,7 +200,4 @@ vscode "ms-vscode-remote.remote-containers"
 vscode "vscodevim.vim"
 vscode "zixuanchen.vitest-explorer"
 go "github.com/rhysd/actionlint/cmd/actionlint"
-go "github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc"
-go "github.com/open-telemetry/opentelemetry-collector-contrib/cmd/telemetrygen"
-npm "@fission-ai/openspec"
 npm "corepack"
