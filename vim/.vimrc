@@ -70,8 +70,6 @@ call plug#begin()
 
   Plug 'leafgarland/typescript-vim'
 
-  Plug 'ludovicchabant/vim-gutentags'
-
   Plug 'vim/colorschemes'
 
   Plug 'mattn/emmet-vim'
