@@ -32,3 +32,16 @@ zstyle ':completion:*:*:docker:*' option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 eval "$(/Users/sam/.local/bin/mise activate zsh)"
+
+source <(kubectl completion zsh)
+
+export GOBIN=${GOBIN:-$(go env GOPATH)/bin}
+
+export PATH="/opt/homebrew/opt/gnu-getopt/bin:$PATH"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/sam/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
+eval "$(lane shellenv)"
